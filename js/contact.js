@@ -1,15 +1,9 @@
-/* =============================================
-   BFL'Y — contact.js
-   Formspree form submission
-   ============================================= */
-
 const form       = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  // Basic client-side validation
   let valid = true;
   form.querySelectorAll('[required]').forEach(field => {
     if (!field.value.trim()) {
@@ -30,23 +24,36 @@ form.addEventListener('submit', async (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = 'Sending...';
   formStatus.textContent = '';
-  formStatus.className = 'form-status';
+
+  const data = {
+    name:    document.getElementById('name').value,
+    email:   document.getElementById('email').value,
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value,
+  };
 
   try {
     const response = await fetch(form.action, {
       method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
+      body: JSON.stringify(data),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
     });
+
+    const result = await response.json();
 
     if (response.ok) {
       formStatus.textContent = 'Message sent successfully. We\'ll get back to you soon!';
       formStatus.className = 'form-status success';
       form.reset();
     } else {
-      throw new Error('Server error');
+      console.error('Formspree error:', result);
+      throw new Error(result.error || 'Server error');
     }
-  } catch {
+  } catch (err) {
+    console.error('Fetch error:', err);
     formStatus.textContent = 'Something went wrong. Please try emailing us directly.';
     formStatus.className = 'form-status error';
   } finally {
@@ -55,7 +62,6 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-// Clear error state on input
 form.querySelectorAll('[required]').forEach(field => {
   field.addEventListener('input', () => field.classList.remove('error'));
 });

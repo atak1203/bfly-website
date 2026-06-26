@@ -4,14 +4,10 @@
 
 /* ---------- CONTACT GRID ---------- */
 .contact-grid {
-  display: grid !important; 
+  display: grid;
   grid-template-columns: 1fr 1.2fr;
   gap: 80px;
   align-items: start;
-  width: 100%;
-  max-width: 1200px; 
-  margin: 0 auto;    
-  box-sizing: border-box;
 }
 
 /* ---------- INFO BLOCKS ---------- */
@@ -176,17 +172,14 @@
 .form-status.success { color: #4ade80; }
 .form-status.error   { color: #e05c5c; }
 
-/* ---------- RESPONSIVE (DÜZELTİLMİŞ KISIM) ---------- */
-@media (max-width: 768px) {
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
   .contact-grid {
-    grid-template-columns: 1fr; /* Sadece mobilde alt alta gelsin */
-    gap: 40px;
-    padding: 0 20px;
+    grid-template-columns: 1fr;
+    gap: 48px;
   }
 
-  .form-row { 
-    grid-template-columns: 1fr; /* Form elemanları mobilde alt alta */
-  }
+  .form-row { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
