@@ -1,0 +1,184 @@
+/* =============================================
+   BFL'Y — sponsors.css
+   ============================================= */
+
+.sponsors-section { padding-top: 48px; }
+
+/* ---------- TIER ---------- */
+.sponsor-tier {
+  margin-bottom: 72px;
+}
+
+.tier-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-dim);
+}
+
+/* ---------- GRIDS ---------- */
+.sponsor-grid.main {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.sponsor-grid.supporting {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* ---------- SPONSOR CARD ---------- */
+.sponsor-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  padding: 36px;
+  transition: border-color 0.25s ease, transform 0.25s var(--ease-out);
+}
+
+.sponsor-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.sponsor-card.small {
+  padding: 28px;
+  gap: 24px;
+}
+
+/* Logo area */
+.sponsor-logo-area {
+  flex-shrink: 0;
+  width: 120px;
+  height: 80px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sponsor-logo-area.small {
+  width: 90px;
+  height: 60px;
+}
+
+.sponsor-logo-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+}
+
+.sponsor-logo-text {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--brand-mid);
+  text-align: center;
+}
+
+/* Sponsor info */
+.sponsor-info {
+  flex: 1;
+}
+
+.sponsor-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.sponsor-card.small .sponsor-name {
+  font-size: 0.95rem;
+}
+
+.sponsor-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  padding: 2px 8px;
+  margin-bottom: 12px;
+}
+
+.sponsor-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ---------- BECOME A SPONSOR ---------- */
+.sponsor-cta-block {
+  margin-top: 24px;
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--bg-card) 100%);
+  padding: 48px;
+}
+
+.sponsor-cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.sponsor-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.sponsor-cta-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .sponsor-grid.main,
+  .sponsor-grid.supporting {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsor-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .sponsor-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-cta-block { padding: 28px; }
+}

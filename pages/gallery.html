@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BFL'Y — Gallery" />
+  <title>Gallery | BFL'Y</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/gallery.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <a href="../index.html" class="nav-logo" aria-label="BFL'Y Home">
+        <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="vehicle.html" class="nav-link">Vehicle</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option active" data-lang="en">EN</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-option" data-lang="tr">TR</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="../index.html" class="nav-link">Home</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="vehicle.html" class="nav-link">Vehicle</a></li>
+        <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+        <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header" aria-labelledby="gallery-heading">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="gallery_eyebrow">Visual Archive</p>
+      <h1 class="page-title" id="gallery-heading" data-i18n="gallery_title">Gallery</h1>
+      <p class="page-subtitle" data-i18n="gallery_subtitle">Photos from our build process, test flights, and competition.</p>
+    </div>
+  </header>
+
+  <!-- ===== GALLERY GRID ===== -->
+  <main class="gallery-section section-pad" aria-label="Photo gallery">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+
+        <!-- Fotoğrafları buraya ekle: -->
+        <!-- <div class="gallery-item"><img src="../assets/images/photo1.jpg" alt="Açıklama" loading="lazy" /></div> -->
+
+        <!-- Şimdilik placeholder'lar: -->
+        <div class="gallery-item placeholder"><span>01</span></div>
+        <div class="gallery-item placeholder wide"><span>02</span></div>
+        <div class="gallery-item placeholder"><span>03</span></div>
+        <div class="gallery-item placeholder"><span>04</span></div>
+        <div class="gallery-item placeholder tall"><span>05</span></div>
+        <div class="gallery-item placeholder"><span>06</span></div>
+        <div class="gallery-item placeholder wide"><span>07</span></div>
+        <div class="gallery-item placeholder"><span>08</span></div>
+        <div class="gallery-item placeholder"><span>09</span></div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&#x2715;</button>
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#x2039;</button>
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#x203A;</button>
+    <div class="lightbox-inner">
+      <img id="lightboxImg" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
+        <p data-i18n="footer_school">Baykar Science High School · SUAS Team</p>
+      </div>
+      <div class="footer-right">
+        <p data-i18n="footer_contact_label">Contact</p>
+        <a href="mailto:bfly@baykarfenlisesi.edu.tr" class="footer-link">bfly@baykarfenlisesi.edu.tr</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 BFL'Y — Baykar Fen Lisesi SUAS Team</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/gallery.js"></script>
+</body>
+</html>

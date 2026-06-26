@@ -1,0 +1,194 @@
+/* =============================================
+   BFL'Y — contact.css
+   ============================================= */
+
+/* ---------- CONTACT GRID ---------- */
+.contact-grid {
+  display: grid !important; 
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;    
+  box-sizing: border-box;
+}
+
+/* ---------- INFO BLOCKS ---------- */
+.info-block {
+  margin-bottom: 40px;
+}
+
+.info-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.info-email {
+  font-size: 1rem;
+  color: var(--text);
+  transition: color 0.2s ease;
+  word-break: break-all;
+}
+
+.info-email:hover { color: var(--accent); }
+
+.info-address {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ---------- SOCIAL LINKS ---------- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.social-link:hover { color: var(--accent); }
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ---------- MAP ---------- */
+.map-wrapper {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-dim);
+}
+
+.map-frame {
+  width: 100%;
+  height: 220px;
+  border: none;
+  display: block;
+  filter: grayscale(30%) invert(5%);
+}
+
+.map-open-link {
+  display: block;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  font-size: 0.78rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  text-align: right;
+  transition: background 0.2s ease;
+}
+
+.map-open-link:hover { background: var(--brand); }
+
+/* ---------- FORM ---------- */
+.contact-form-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  padding: 40px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.form-group input,
+.form-group textarea {
+  background: var(--bg);
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  padding: 12px 16px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease;
+  outline: none;
+  resize: vertical;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #e05c5c;
+}
+
+.form-submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.form-status {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 20px;
+}
+
+.form-status.success { color: #4ade80; }
+.form-status.error   { color: #e05c5c; }
+
+/* ---------- RESPONSIVE (DÜZELTİLMİŞ KISIM) ---------- */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* Sadece mobilde alt alta gelsin */
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .form-row { 
+    grid-template-columns: 1fr; /* Form elemanları mobilde alt alta */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-wrap { padding: 24px; }
+}

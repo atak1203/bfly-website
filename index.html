@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BFL'Y — Baykar Fen Lisesi SUAS Competition Team" />
+  <title>BFL'Y | Baykar High School SUAS Team</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+
+      <a href="index.html" class="nav-logo" aria-label="BFL'Y Home">
+        <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="pages/team.html" class="nav-link">Team</a></li>
+        <li><a href="pages/vehicle.html" class="nav-link">Vehicle</a></li>
+        <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pages/sponsors.html" class="nav-link">Sponsors</a></li>
+        <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-option active" data-lang="en">EN</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-option" data-lang="tr">TR</span>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
+      <ul role="list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="pages/team.html" class="nav-link">Team</a></li>
+        <li><a href="pages/vehicle.html" class="nav-link">Vehicle</a></li>
+        <li><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="pages/sponsors.html" class="nav-link">Sponsors</a></li>
+        <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" aria-label="Hero section">
+
+    <!-- VIDEO BACKGROUND -->
+    <div class="hero-video-wrap" aria-hidden="true">
+      <video
+        class="hero-video"
+        src="assets/videos/hero.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+      ></video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="runway-line" aria-hidden="true">
+        <div class="runway-track"></div>
+      </div>
+
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Baykar Science High School </p>
+      <h1 class="hero-title">
+        <span class="hero-title-main">BFL<span class="accent">'Y</span></span>
+        <span class="hero-title-sub" data-i18n="hero_subtitle">Grounded in roots,.<br>reaching for the sky</span>
+      </h1>
+
+     <!-- <p class="hero-desc" data-i18n="hero_desc">
+        A student-built carbon fiber fixed-wing UAV competing in one of the world's most prestigious autonomous systems competitions — AUVSI SUAS.
+      </p>
+
+      <div class="hero-cta">
+        <a href="pages/vehicle.html" class="btn btn-primary" data-i18n="hero_cta_vehicle">Our Vehicle</a>
+        <a href="pages/team.html" class="btn btn-ghost" data-i18n="hero_cta_team">Meet the Team</a>
+      </div>
+    </div> --> 
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-dot"></div>
+    </div>
+  </section>
+
+  <!-- ===== STATS STRIP ===== -->
+  <section class="stats-strip" aria-label="Key stats">
+    <div class="stats-container">
+      <div class="stat-item">
+        <span class="stat-number">2</span></span>
+        <span class="stat-label" data-i18n="stat_carbon">Years of Flight</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-number">13</span></span>
+        <span class="stat-label" data-i18n="stat_carbon">Team Members</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-number">3</span></span>
+        <span class="stat-label" data-i18n="stat_carbon">Aircrafts</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-snippet section-pad" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-eyebrow" data-i18n="about_eyebrow">Who We Are</p>
+        <h2 class="section-title" id="about-heading" data-i18n="about_title">A high school team<br>with an engineering mindset.</h2>
+        <p class="body-text" data-i18n="about_body">
+          We are BFL'Y, the SUAS team of Baykar Science High School. Competing against universities from around the world, we design, manufacture, and fly our own fully autonomous fixed-wing UAV — from carbon fiber layup to autonomous mission planning.
+        </p>
+        <a href="pages/team.html" class="btn btn-ghost" data-i18n="about_cta">Learn More About Us</a>
+      </div>
+      <div class="about-visual">
+        <img src="assets/images/teamPhoto.jpeg     " alt="BFL'Y Team Photo" class="about-img">
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- ===== VEHICLE TEASER ===== -->
+  <section class="vehicle-teaser section-pad dark-section" aria-labelledby="vehicle-heading">
+    <div class="container">
+      <p class="section-eyebrow" data-i18n="vehicle_eyebrow">Our Aircrafts</p>
+      <h2 class="section-title" id="vehicle-heading" data-i18n="vehicle_title">Advanced Engineering</h2>
+
+      <div class="vehicle-cards">
+        <div class="v-card">
+          <div class="v-card-icon" aria-hidden="true">◈</div>
+          <h3 data-i18n="vcard1_title">SkyWipe</h3>
+          <p data-i18n="vcard1_body">Our firs aircraft project. <br><br></p>
+          <div class="about-visual">
+        <img src="assets/images/skyWipe.jpeg     " alt="SkyWipe Photo" class="about-img">
+      </div>
+        </div>
+        <div class="v-card">
+          <div class="v-card-icon" aria-hidden="true">◈</div>
+          <h3 data-i18n="vcard1_title">TurcoFighter</h3>
+          <p data-i18n="vcard1_body">Our firs aircraft project. <br><br></p>
+          <div class="about-visual">
+        <img src="assets/images/turcoFighter.jpeg     " alt="turcoFighter Photo" class="about-img">
+      </div>
+        </div>
+        <div class="v-card">
+          <div class="v-card-icon" aria-hidden="true">◈</div>
+          <h3 data-i18n="vcard1_title">X</h3>
+          <p data-i18n="vcard1_body">Our firs aircraft project. <br><br></p>
+          <div class="about-visual">
+        <img src="assets/images/X.jpeg     " alt="X Photo" class="about-img">
+      </div>
+        </div>
+
+      <div class="vehicle-cta-wrap">
+        <a href="pages/vehicle.html" class="btn btn-primary" data-i18n="vehicle_cta">Full Vehicle Documentation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
+        <p data-i18n="footer_school">Baykar Science High School · SUAS Team</p>
+      </div>
+      <div class="footer-right">
+        <p data-i18n="footer_contact_label">Contact</p>
+        <a href="mailto:bfly@baykarfenlisesi.edu.tr" class="footer-link">bfly@baykarfenlisesi.edu.tr</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 BFL'Y — Baykar Fen Lisesi SUAS Team</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
