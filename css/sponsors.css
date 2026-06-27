@@ -2,36 +2,14 @@
    BFL'Y — sponsors.css
    ============================================= */
 
-.sponsors-section { padding-top: 48px; }
+.sponsors-section { padding: 72px 0 96px; }
 
-/* ---------- TIER ---------- */
-.sponsor-tier {
-  margin-bottom: 72px;
-}
-
-.tier-label {
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 24px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border-dim);
-}
-
-/* ---------- GRIDS ---------- */
-.sponsor-grid.main {
+/* ---------- SPONSOR GRID ---------- */
+.sponsor-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.sponsor-grid.supporting {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
+  margin-bottom: 64px;
 }
 
 /* ---------- SPONSOR CARD ---------- */
@@ -39,11 +17,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
   border-radius: 6px;
-  padding: 36px;
+  padding: 32px;
   transition: border-color 0.25s ease, transform 0.25s var(--ease-out);
 }
 
@@ -52,16 +30,11 @@
   transform: translateY(-3px);
 }
 
-.sponsor-card.small {
-  padding: 28px;
-  gap: 24px;
-}
-
 /* Logo area */
 .sponsor-logo-area {
   flex-shrink: 0;
-  width: 120px;
-  height: 80px;
+  width: 100px;
+  height: 68px;
   background: var(--bg-dark);
   border: 1px solid var(--border-dim);
   border-radius: 4px;
@@ -71,71 +44,73 @@
   overflow: hidden;
 }
 
-.sponsor-logo-area.small {
-  width: 90px;
-  height: 60px;
-}
-
 .sponsor-logo-area img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 12px;
+  padding: 10px;
+  filter: brightness(0.9);
+  transition: filter 0.25s ease;
 }
+
+.sponsor-card:hover .sponsor-logo-area img { filter: brightness(1); }
 
 .sponsor-logo-text {
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--brand-mid);
   text-align: center;
 }
 
 /* Sponsor info */
-.sponsor-info {
-  flex: 1;
-}
+.sponsor-info { flex: 1; }
 
 .sponsor-name {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--text);
-  margin-bottom: 8px;
-}
-
-.sponsor-card.small .sponsor-name {
-  font-size: 0.95rem;
+  margin-bottom: 6px;
 }
 
 .sponsor-tag {
   display: inline-block;
   font-family: var(--font-display);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  border: 1px solid var(--accent);
+  border: 1px solid rgba(74,158,204,0.4);
   border-radius: 3px;
   padding: 2px 8px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .sponsor-desc {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
-/* ---------- BECOME A SPONSOR ---------- */
+/* ---------- BECOME A SPONSOR CTA ---------- */
 .sponsor-cta-block {
-  margin-top: 24px;
   border: 1px solid var(--border-dim);
   border-radius: 6px;
-  background: linear-gradient(135deg, var(--brand) 0%, var(--bg-card) 100%);
+  background: var(--bg-card);
   padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sponsor-cta-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .sponsor-cta-inner {
@@ -154,18 +129,15 @@
 }
 
 .sponsor-cta-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-muted);
   max-width: 480px;
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
-  .sponsor-grid.main,
-  .sponsor-grid.supporting {
-    grid-template-columns: 1fr;
-  }
+  .sponsor-grid { grid-template-columns: 1fr; }
 
   .sponsor-card {
     flex-direction: column;

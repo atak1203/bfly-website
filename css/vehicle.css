@@ -30,15 +30,9 @@
   transform: translateY(-6px);
 }
 
-.veh-card.featured {
-  border-color: rgba(74, 158, 204, 0.3);
-}
+.veh-card.featured { border-color: rgba(74, 158, 204, 0.3); }
+.veh-card.featured:hover { border-color: var(--accent); }
 
-.veh-card.featured:hover {
-  border-color: var(--accent);
-}
-
-/* Image area */
 .veh-card-image {
   width: 100%;
   aspect-ratio: 16/10;
@@ -54,14 +48,11 @@
   transition: transform 0.4s var(--ease-out);
 }
 
-.veh-card:hover .veh-card-image img {
-  transform: scale(1.04);
-}
+.veh-card:hover .veh-card-image img { transform: scale(1.04); }
 
-/* Placeholder until real photos added */
 .veh-card-placeholder {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,11 +66,11 @@
   transition: opacity 0.3s ease;
 }
 
-.veh-card:hover .veh-card-placeholder {
-  opacity: 0.75;
-}
+/* Fotoğraf varsa placeholder'ı gizle */
+.veh-card-image img + .veh-card-placeholder { display: none; }
 
-/* Card body */
+.veh-card:hover .veh-card-placeholder { opacity: 0.75; }
+
 .veh-card-body {
   padding: 28px;
   display: flex;
@@ -153,9 +144,7 @@
   transition: letter-spacing 0.2s ease;
 }
 
-.veh-card:hover .veh-cta {
-  letter-spacing: 0.15em;
-}
+.veh-card:hover .veh-cta { letter-spacing: 0.15em; }
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 900px) {
