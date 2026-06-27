@@ -3,153 +3,1366 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BFL'Y — Skywipe" />
-  <title>Skywipe | BFL'Y</title>
+  <title>SkyWipe — BFL'Y SUAS Team</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/vehicle.css" />
-  <link rel="stylesheet" href="../css/vehicle-detail.css" />
+  <style>
+    /* =============================================
+       GLOBAL — inherits from style.css design tokens
+       ============================================= */
+    :root {
+      --bg:          #0D1117;
+      --bg-card:     #111827;
+      --bg-dark:     #080D13;
+      --brand:       #182a47;
+      --brand-mid:   #1e3a63;
+      --text:        #F0F0F5;
+      --text-muted:  #8899BB;
+      --accent:      #4A9ECC;
+      --accent-dim:  #2d7aaa;
+      --border:      rgba(24, 42, 71, 0.6);
+      --border-dim:  rgba(255,255,255,0.07);
+      --font-display:'Orbitron', sans-serif;
+      --font-body:   'Inter', sans-serif;
+      --nav-height:  72px;
+      --max-width:   1200px;
+      --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img, video { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .accent { color: var(--accent); }
+
+    /* =============================================
+       NAVBAR
+       ============================================= */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      height: var(--nav-height);
+      background-color: rgba(13,17,23,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .nav-container {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: var(--text); letter-spacing: 0.05em; }
+    .logo-accent { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 36px; }
+    .nav-link {
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-muted); transition: color 0.2s ease; position: relative;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px;
+      background: var(--accent); transition: width 0.25s var(--ease-out);
+    }
+    .nav-link:hover, .nav-link.active { color: var(--text); }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .lang-toggle {
+      background: none; border: 1px solid var(--border-dim); border-radius: 4px;
+      padding: 5px 10px; cursor: pointer; display: flex; align-items: center; gap: 4px;
+    }
+    .lang-option {
+      font-family: var(--font-display); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.1em; color: var(--text-muted); transition: color 0.2s ease; cursor: pointer;
+    }
+    .lang-option.active { color: var(--accent); }
+    .lang-divider { color: var(--border-dim); font-size: 0.75rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s ease; }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* =============================================
+       SECTION 1 — HERO (Full-screen + Hotspots)
+       ============================================= */
+    .hero-vehicle {
+      position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; padding-top: var(--nav-height);
+      background: radial-gradient(ellipse at 50% 60%, #0a1929 0%, var(--bg-dark) 70%);
+    }
+    .hero-bg-grid {
+      position: absolute; inset: 0; opacity: 0.04;
+      background-image: linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-vehicle-wrap {
+      position: relative; width: 90%; max-width: 1100px;
+      animation: heroFloat 6s ease-in-out infinite;
+    }
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50%       { transform: translateY(-18px) rotate(0.5deg); }
+    }
+    .hero-drone-img {
+      width: 100%; height: auto;
+      filter: drop-shadow(0 40px 80px rgba(74,158,204,0.25));
+    }
+    /* Hotspot system */
+    .hotspot {
+      position: absolute; width: 36px; height: 36px; cursor: pointer;
+      transform: translate(-50%, -50%);
+    }
+    .hotspot-ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      border: 1.5px solid rgba(74,158,204,0.8);
+      animation: hotspotPulse 2.5s ease-in-out infinite;
+    }
+    .hotspot-dot {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--accent); border: 2px solid #fff;
+    }
+    @keyframes hotspotPulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50%       { transform: scale(1.4); opacity: 0.3; }
+    }
+    .hotspot-tooltip {
+      position: absolute; left: 50%; bottom: calc(100% + 14px); transform: translateX(-50%);
+      background: rgba(255,255,255,0.96); color: #0a1929;
+      padding: 10px 16px; border-radius: 8px; width: max-content; max-width: 200px;
+      font-size: 0.8rem; font-weight: 600; line-height: 1.4; text-align: center;
+      pointer-events: none; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateX(-50%) translateY(6px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .hotspot-tooltip::after {
+      content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      border: 7px solid transparent; border-top-color: rgba(255,255,255,0.96);
+    }
+    .hotspot:hover .hotspot-tooltip,
+    .hotspot.active .hotspot-tooltip {
+      opacity: 1; transform: translateX(-50%) translateY(0);
+    }
+    .hero-title-overlay {
+      position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
+      text-align: center; pointer-events: none;
+    }
+    .hero-eyebrow-small {
+      font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+    }
+    .hero-name {
+      font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900; letter-spacing: 0.04em; line-height: 1;
+      text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+    }
+    .hero-name-sub {
+      font-size: 0.9rem; color: var(--text-muted); margin-top: 10px;
+      font-weight: 300; letter-spacing: 0.1em;
+    }
+    .scroll-hint {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      font-family: var(--font-display); font-size: 0.55rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted);
+      animation: scrollFade 2s ease-in-out infinite;
+    }
+    .scroll-arrow { font-size: 1rem; }
+    @keyframes scrollFade {
+      0%, 100% { opacity: 0.4; transform: translateX(-50%) translateY(0); }
+      50%       { opacity: 1; transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* =============================================
+       SECTION 2 — FEATURES CAROUSEL
+       ============================================= */
+    .features-section {
+      padding: 100px 0; background: var(--bg-dark);
+      border-top: 1px solid var(--border-dim);
+    }
+    .features-header { text-align: center; margin-bottom: 64px; }
+    .section-eyebrow {
+      font-family: var(--font-display); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800; line-height: 1.2; color: var(--text);
+    }
+
+    .features-carousel { position: relative; overflow: hidden; }
+    .features-track {
+      display: flex; transition: transform 0.7s var(--ease-out);
+    }
+    .feature-slide {
+      min-width: 100%; display: flex; align-items: center; gap: 80px; padding: 0 24px;
+      max-width: var(--max-width); margin: 0 auto;
+    }
+    .feature-slide-inner {
+      display: flex; align-items: center; gap: 80px;
+      max-width: var(--max-width); margin: 0 auto; width: 100%; padding: 0 24px;
+    }
+    .feature-media {
+      flex: 0 0 55%; aspect-ratio: 16/9; background: var(--bg-card);
+      border-radius: 8px; overflow: hidden; border: 1px solid var(--border-dim);
+      position: relative;
+    }
+    .feature-media img, .feature-media video {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .feature-media-label {
+      position: absolute; top: 16px; left: 16px; background: rgba(13,17,23,0.7);
+      backdrop-filter: blur(8px); padding: 4px 12px; border-radius: 20px;
+      font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); border: 1px solid var(--border-dim);
+    }
+    .feature-media-placeholder {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      color: var(--text-muted); background: linear-gradient(135deg, var(--bg-card) 0%, #0c1420 100%);
+    }
+    .feature-media-placeholder svg { opacity: 0.2; }
+    .feature-info { flex: 1; }
+    .feature-number {
+      font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.2em;
+      color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    }
+    .feature-title {
+      font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800; margin-bottom: 16px; line-height: 1.2;
+    }
+    .feature-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 32px; }
+
+    .carousel-controls {
+      display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 48px;
+    }
+    .carousel-btn {
+      width: 44px; height: 44px; border-radius: 50%; background: transparent;
+      border: 1px solid var(--border-dim); color: var(--text); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;
+      font-size: 1rem;
+    }
+    .carousel-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .carousel-dots { display: flex; gap: 10px; }
+    .carousel-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--border-dim);
+      cursor: pointer; transition: all 0.3s ease; border: none; padding: 0;
+    }
+    .carousel-dot.active { background: var(--accent); width: 24px; border-radius: 3px; }
+
+    /* =============================================
+       SECTION 3 — DESIGN STATEMENT (Apple style)
+       ============================================= */
+    .design-statement {
+      padding: 140px 0; background: var(--bg); text-align: center; overflow: hidden;
+    }
+    .design-eyebrow {
+      font-family: var(--font-display); font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px;
+    }
+    .design-headline {
+      font-family: var(--font-display); font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      font-weight: 900; line-height: 1.1; max-width: 800px; margin: 0 auto 32px;
+      letter-spacing: -0.01em;
+    }
+    .design-headline em { font-style: normal; color: var(--accent); }
+    .design-desc {
+      max-width: 560px; margin: 0 auto 80px; color: var(--text-muted);
+      font-size: 1.05rem; line-height: 1.8;
+    }
+    .design-drone-showcase {
+      position: relative; max-width: 900px; margin: 0 auto;
+    }
+    .design-drone-img {
+      width: 100%; filter: drop-shadow(0 60px 100px rgba(74,158,204,0.3));
+      animation: designFloat 8s ease-in-out infinite;
+    }
+    @keyframes designFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50%       { transform: translateY(-12px) scale(1.01); }
+    }
+    .design-glow {
+      position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%);
+      width: 70%; height: 80px;
+      background: radial-gradient(ellipse, rgba(74,158,204,0.25) 0%, transparent 70%);
+      filter: blur(20px); pointer-events: none;
+    }
+
+    /* =============================================
+       SECTION 4 — SOFTWARE (dark, code aesthetic)
+       ============================================= */
+    .software-section {
+      padding: 120px 0; background: var(--bg-dark);
+      border-top: 1px solid var(--border-dim);
+    }
+    .software-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .software-visual {
+      background: #06090f; border: 1px solid rgba(74,158,204,0.15); border-radius: 10px;
+      padding: 32px; font-family: 'Courier New', monospace; position: relative; overflow: hidden;
+    }
+    .sw-bar {
+      display: flex; gap: 8px; margin-bottom: 24px;
+    }
+    .sw-dot {
+      width: 12px; height: 12px; border-radius: 50%;
+    }
+    .sw-dot:nth-child(1) { background: #ff5f57; }
+    .sw-dot:nth-child(2) { background: #febc2e; }
+    .sw-dot:nth-child(3) { background: #28c840; }
+    .sw-filename {
+      font-size: 0.7rem; color: var(--text-muted); margin-left: auto;
+      letter-spacing: 0.05em; font-family: var(--font-body);
+    }
+    .sw-code { font-size: 0.78rem; line-height: 1.9; }
+    .sw-comment { color: #4a6080; }
+    .sw-keyword { color: #c792ea; }
+    .sw-string  { color: #c3e88d; }
+    .sw-func    { color: #82aaff; }
+    .sw-number  { color: #f78c6c; }
+    .sw-var     { color: var(--text); }
+    .sw-accent  { color: var(--accent); }
+    .sw-cursor  {
+      display: inline-block; width: 2px; height: 1em; background: var(--accent);
+      vertical-align: text-bottom; animation: blink 1s step-end infinite; margin-left: 2px;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    .code-glow {
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      animation: codeScan 3s linear infinite;
+    }
+    @keyframes codeScan {
+      0%   { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    .sw-modules {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px;
+    }
+    .sw-module {
+      background: var(--bg-card); border: 1px solid var(--border-dim); border-radius: 6px;
+      padding: 16px; transition: border-color 0.2s ease;
+    }
+    .sw-module:hover { border-color: rgba(74,158,204,0.4); }
+    .sw-module-name {
+      font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 4px;
+    }
+    .sw-module-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+
+    /* =============================================
+       SECTION 5 — CLOSE LOOK (accordion + image)
+       ============================================= */
+    .close-look {
+      padding: 120px 0; background: var(--bg);
+    }
+    .close-look-header { text-align: center; margin-bottom: 72px; }
+    .close-look-grid {
+      display: grid; grid-template-columns: 380px 1fr; gap: 60px; align-items: start;
+    }
+    .accordion-list { display: flex; flex-direction: column; gap: 0; }
+    .accordion-item {
+      border-bottom: 1px solid var(--border-dim); overflow: hidden;
+    }
+    .accordion-item:first-child { border-top: 1px solid var(--border-dim); }
+    .accordion-trigger {
+      width: 100%; display: flex; align-items: center; gap: 14px; padding: 20px 0;
+      background: none; border: none; cursor: pointer; color: var(--text);
+      text-align: left; transition: color 0.2s ease;
+    }
+    .accordion-trigger:hover { color: var(--accent); }
+    .accordion-trigger.active { color: var(--accent); }
+    .accordion-icon {
+      width: 24px; height: 24px; border-radius: 50%; border: 1px solid currentColor;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+      font-size: 1rem; line-height: 1; transition: transform 0.3s ease;
+    }
+    .accordion-trigger.active .accordion-icon { transform: rotate(45deg); }
+    .accordion-label {
+      font-family: var(--font-display); font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .accordion-body {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out);
+    }
+    .accordion-body.open { max-height: 200px; }
+    .accordion-body p {
+      padding: 0 0 20px 38px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.75;
+    }
+
+    .close-look-image-wrap {
+      position: sticky; top: calc(var(--nav-height) + 32px);
+      border-radius: 10px; overflow: hidden;
+      border: 1px solid var(--border-dim); background: var(--bg-card);
+      aspect-ratio: 4/3; transition: all 0.5s var(--ease-out);
+    }
+    .cl-image {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: opacity 0.4s ease, transform 0.5s var(--ease-out);
+    }
+    .cl-placeholder {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px; color: var(--text-muted);
+      background: linear-gradient(135deg, #0e1a2b 0%, #0a1018 100%);
+    }
+    .cl-placeholder-label {
+      font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+    }
+
+    /* =============================================
+       SECTION 6 — GENERAL OVERVIEW (Kızılelma style)
+       ============================================= */
+    .general-overview {
+      padding: 120px 0;
+      background: var(--brand);
+      border-top: 1px solid rgba(74,158,204,0.15);
+    }
+    .overview-inner {
+      display: grid; grid-template-columns: auto 1fr; gap: 64px; align-items: start;
+    }
+    .overview-rotated-label {
+      writing-mode: vertical-rl; transform: rotate(180deg);
+      font-family: var(--font-display); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+      padding-top: 8px; white-space: nowrap;
+    }
+    .overview-content { }
+    .overview-title {
+      font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 900; line-height: 0.95; margin-bottom: 48px;
+      letter-spacing: 0.02em;
+    }
+    .overview-title span { display: block; color: var(--accent); font-size: 0.55em; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .overview-text p {
+      font-size: 0.95rem; color: rgba(240,240,245,0.75); line-height: 1.9;
+      margin-bottom: 24px; max-width: 700px; text-align: justify;
+    }
+    .overview-text p:last-child { margin-bottom: 0; }
+
+    /* =============================================
+       SECTION 7 — SCROLL-SYNCED 3D (The Showpiece)
+       ============================================= */
+    .scroll-3d-section {
+      position: relative; height: 300vh;
+    }
+    .scroll-3d-sticky {
+      position: sticky; top: 0; height: 100vh; overflow: hidden;
+      display: flex; align-items: center; background: var(--bg-dark);
+      border-top: 1px solid var(--border-dim);
+    }
+    .scroll-3d-inner {
+      display: flex; align-items: center; gap: 80px;
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px; width: 100%;
+    }
+    .scroll-3d-info { flex: 0 0 340px; }
+    .scroll-3d-title {
+      font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800; margin-bottom: 24px; line-height: 1.15;
+    }
+    .scroll-3d-desc { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 32px; }
+    .scroll-3d-steps { display: flex; flex-direction: column; gap: 16px; }
+    .scroll-step {
+      display: flex; gap: 16px; align-items: flex-start; opacity: 0.3;
+      transition: opacity 0.4s ease;
+    }
+    .scroll-step.active { opacity: 1; }
+    .scroll-step-num {
+      font-family: var(--font-display); font-size: 0.65rem; color: var(--accent);
+      letter-spacing: 0.1em; flex-shrink: 0; padding-top: 3px;
+    }
+    .scroll-step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .scroll-step.active p { color: var(--text); }
+
+    .scroll-3d-canvas {
+      flex: 1; display: flex; align-items: center; justify-content: center; position: relative;
+    }
+    .drone-3d-wrap {
+      width: 100%; max-width: 640px; position: relative;
+      transform-style: preserve-3d; perspective: 1000px;
+    }
+    .drone-3d-img {
+      width: 100%;
+      filter: drop-shadow(0 30px 80px rgba(74,158,204,0.35));
+      transition: transform 0.1s linear;
+    }
+    .drone-progress-ring {
+      position: absolute; top: 50%; right: -48px; transform: translateY(-50%);
+      width: 4px; height: 200px; background: var(--border-dim); border-radius: 2px; overflow: hidden;
+    }
+    .drone-progress-fill {
+      width: 100%; height: 0%; background: var(--accent); border-radius: 2px;
+      transition: height 0.1s linear;
+    }
+
+    /* =============================================
+       SECTION 8 — TECHNICAL SPECS
+       ============================================= */
+    .specs-section {
+      padding: 120px 0; background: var(--bg);
+      border-top: 1px solid var(--border-dim);
+    }
+    .specs-header { text-align: center; margin-bottom: 80px; }
+    .specs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+    .specs-category { }
+    .specs-cat-title {
+      font-family: var(--font-display); font-size: 0.65rem; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+      margin-bottom: 24px; padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .spec-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 14px 0; border-bottom: 1px solid var(--border-dim);
+      gap: 24px;
+    }
+    .spec-key { font-size: 0.85rem; color: var(--text-muted); flex: 0 0 auto; }
+    .spec-val {
+      font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+      color: var(--text); text-align: right;
+    }
+
+    /* =============================================
+       SECTION 9 — GALLERY & MEDIA
+       ============================================= */
+    .gallery-section {
+      padding: 120px 0; background: var(--bg-dark);
+      border-top: 1px solid var(--border-dim);
+    }
+    .gallery-header { text-align: center; margin-bottom: 64px; }
+    .gallery-tabs {
+      display: flex; justify-content: center; gap: 8px; margin-bottom: 48px;
+    }
+    .gallery-tab {
+      padding: 8px 24px; border-radius: 24px; background: transparent;
+      border: 1px solid var(--border-dim); color: var(--text-muted); cursor: pointer;
+      font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.1em;
+      text-transform: uppercase; transition: all 0.2s ease;
+    }
+    .gallery-tab:hover { border-color: var(--accent); color: var(--accent); }
+    .gallery-tab.active { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 200px 200px; gap: 12px;
+    }
+    .gallery-item {
+      background: var(--bg-card); border-radius: 8px; overflow: hidden;
+      border: 1px solid var(--border-dim); cursor: pointer;
+      transition: transform 0.3s var(--ease-out), border-color 0.2s ease;
+      position: relative;
+    }
+    .gallery-item:hover { transform: scale(1.02); border-color: rgba(74,158,204,0.4); }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-placeholder {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 10px;
+      background: linear-gradient(135deg, #0d1929 0%, #080d13 100%);
+      color: var(--text-muted); font-size: 0.8rem;
+    }
+    .gallery-placeholder svg { opacity: 0.15; }
+    .gallery-item-label {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px;
+      background: linear-gradient(transparent, rgba(8,13,19,0.9));
+      font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+
+    /* =============================================
+       SECTION 10 — MISSION BADGE (bonus)
+       ============================================= */
+    .mission-section {
+      padding: 100px 0; background: var(--bg);
+      border-top: 1px solid var(--border-dim); text-align: center;
+    }
+    .mission-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--bg-card); border: 1px solid rgba(74,158,204,0.3);
+      border-radius: 40px; padding: 10px 24px; margin-bottom: 48px;
+    }
+    .mission-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #3bf73b; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(59,247,59,0.4); } 50% { box-shadow: 0 0 0 8px transparent; } }
+    .mission-badge-text { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+    .mission-headline {
+      font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 900; max-width: 700px; margin: 0 auto 24px; line-height: 1.1;
+    }
+    .mission-desc {
+      max-width: 480px; margin: 0 auto 48px; color: var(--text-muted);
+      font-size: 0.95rem; line-height: 1.8;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px;
+      border-radius: 4px; font-family: var(--font-display); font-size: 0.75rem;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      transition: all 0.2s var(--ease-out); cursor: pointer; border: none;
+    }
+    .btn-primary { background-color: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background-color: #62b8e0; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(74,158,204,0.3); }
+    .btn-ghost { background-color: transparent; color: var(--text); border: 1px solid var(--border-dim); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+    .mission-cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* =============================================
+       FOOTER
+       ============================================= */
+    .footer {
+      background: var(--bg-dark); border-top: 1px solid var(--border-dim); padding: 48px 0 24px;
+    }
+    .footer-container {
+      max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 32px; margin-bottom: 40px;
+    }
+    .footer-left p { font-size: 0.82rem; color: var(--text-muted); margin-top: 8px; }
+    .footer-right { text-align: right; }
+    .footer-right p { font-size: 0.75rem; font-family: var(--font-display); letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px; }
+    .footer-link { font-size: 0.9rem; color: var(--accent); transition: opacity 0.2s; }
+    .footer-link:hover { opacity: 0.75; }
+    .footer-bottom {
+      max-width: var(--max-width); margin: 0 auto; padding: 20px 24px 0;
+      border-top: 1px solid var(--border-dim);
+    }
+    .footer-bottom p { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* =============================================
+       REVEAL ANIMATIONS
+       ============================================= */
+    .reveal {
+      opacity: 0; transform: translateY(32px);
+      transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* =============================================
+       RESPONSIVE
+       ============================================= */
+    @media (max-width: 900px) {
+      .software-grid { grid-template-columns: 1fr; gap: 48px; }
+      .close-look-grid { grid-template-columns: 1fr; }
+      .close-look-image-wrap { position: relative; top: auto; margin-bottom: 32px; }
+      .scroll-3d-inner { flex-direction: column; }
+      .scroll-3d-info { flex: 1; }
+      .specs-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .overview-inner { grid-template-columns: 1fr; }
+      .overview-rotated-label { writing-mode: horizontal-tb; transform: none; margin-bottom: 8px; }
+      .feature-slide-inner { flex-direction: column; gap: 40px; }
+      .feature-media { flex: none; width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .mission-cta { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .footer-container { flex-direction: column; }
+      .footer-right { text-align: left; }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="navbar scrolled" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-logo" aria-label="BFL'Y Home">
-        <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
-      </a>
-      <ul class="nav-links" role="list">
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="team.html" class="nav-link">Team</a></li>
-        <li><a href="vehicle.html" class="nav-link active">Vehicle</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-      <div class="nav-right">
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
-          <span class="lang-option active" data-lang="en">EN</span>
-          <span class="lang-divider">/</span>
-          <span class="lang-option" data-lang="tr">TR</span>
-        </button>
-        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
+<!-- ================================================
+     NAVBAR
+     ================================================ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">
+      <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html#home" class="nav-link">Home</a></li>
+      <li><a href="../pages/team.html" class="nav-link">Team</a></li>
+      <li><a href="../index.html#vehicles" class="nav-link active">Vehicle</a></li>
+      <li><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+      <li><a href="../pages/gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="../pages/sponsors.html" class="nav-link">Sponsors</a></li>
+      <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-toggle" aria-label="Language toggle">
+        <span class="lang-option active" id="lang-en">EN</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" id="lang-tr">TR</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ================================================
+     SECTION 1 — HERO
+     ================================================ -->
+<section class="hero-vehicle">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-vehicle-wrap">
+    <!-- Replace src with your actual drone image -->
+    <img
+      src="../assets/images/skywipe-hero.png"
+      alt="SkyWipe Drone"
+      class="hero-drone-img"
+      id="heroDroneImg"
+      onerror="this.style.display='none'; document.getElementById('heroDroneFallback').style.display='flex'"
+    />
+    <!-- Fallback if image missing -->
+    <div id="heroDroneFallback" style="display:none; width:100%; aspect-ratio:16/6; background:linear-gradient(135deg,#0a1929,#050a12); border-radius:12px; align-items:center; justify-content:center; border:1px solid rgba(74,158,204,0.2);">
+      <div style="text-align:center; color:var(--text-muted);">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <p style="font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-top:16px;">SkyWipe · Place drone image at assets/images/skywipe-hero.png</p>
       </div>
     </div>
-    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile navigation">
-      <ul role="list">
-        <li><a href="../index.html" class="nav-link">Home</a></li>
-        <li><a href="team.html" class="nav-link">Team</a></li>
-        <li><a href="vehicle.html" class="nav-link active">Vehicle</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="sponsors.html" class="nav-link">Sponsors</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <header class="vd-hero" data-name="SKYWIPE">
-    <div class="container">
-      <a href="vehicle.html" class="vd-back">← All Vehicles</a>
-      <div class="vd-hero-inner">
-        <div>
-          <div class="vd-meta">
-            <span class="vd-year">2024</span>
-            <span class="vd-tag">First Build</span>
-            <span class="vd-tag">Drone</span>
-          </div>
-          <h1 class="vd-title">Skywipe</h1>
-          <p class="vd-subtitle">Our very first aircraft. A cam-wiping drone that started it all — the project that proved BFL'Y could build.</p>
-        </div>
-      </div>
+    <!-- Hotspot 1 — Cleaning System -->
+    <div class="hotspot" style="top: 38%; left: 28%;" data-tip="Modular Cleaning Head<br/>Dual-brush ultrasonic system">
+      <div class="hotspot-ring"></div>
+      <div class="hotspot-dot"></div>
+      <div class="hotspot-tooltip"></div>
     </div>
-  </header>
-
-  <div class="vd-image-section">
-    <div class="vd-image-placeholder">
-      <!-- <img src="../assets/images/skywipe-main.jpg" alt="Skywipe drone" /> -->
-      Photo Coming Soon
+    <!-- Hotspot 2 — Main Sensor -->
+    <div class="hotspot" style="top: 22%; left: 50%;" data-tip="LiDAR + Vision Fusion<br/>360° obstacle avoidance">
+      <div class="hotspot-ring"></div>
+      <div class="hotspot-dot"></div>
+      <div class="hotspot-tooltip"></div>
+    </div>
+    <!-- Hotspot 3 — Propulsion -->
+    <div class="hotspot" style="top: 55%; left: 68%;" data-tip="Quad Brushless Motors<br/>25 min flight endurance">
+      <div class="hotspot-ring"></div>
+      <div class="hotspot-dot"></div>
+      <div class="hotspot-tooltip"></div>
+    </div>
+    <!-- Hotspot 4 — Water Tank -->
+    <div class="hotspot" style="top: 65%; left: 40%;" data-tip="800ml Water Reservoir<br/>Pressurized spray nozzles">
+      <div class="hotspot-ring"></div>
+      <div class="hotspot-dot"></div>
+      <div class="hotspot-tooltip"></div>
     </div>
   </div>
 
-  <main class="vd-content">
-    <div class="container">
-      <div class="vd-grid">
+  <div class="hero-title-overlay">
+    <p class="hero-eyebrow-small">BFL'Y SUAS Team · First Vehicle</p>
+    <h1 class="hero-name">SKY<span class="accent">WIPE</span></h1>
+    <p class="hero-name-sub">Autonomous Glass Cleaning UAS</p>
+  </div>
 
-        <div class="vd-body">
-          <h2>Overview</h2>
-          <p>Skywipe was BFL'Y's first ever aircraft project, built in 2024. Designed as a cam-wiping drone, it was never about winning a competition — it was about learning whether a group of high school students could actually build something that flies.</p>
-          <p>The answer was yes. Skywipe gave the team its first real experience with airframe construction, electronics integration, and flight testing. Every mistake made here made Talon and X better.</p>
+  <div class="scroll-hint">
+    <span class="scroll-arrow">↓</span>
+    <span>Scroll to explore</span>
+  </div>
+</section>
 
-          <h2>What We Learned</h2>
-          <p>Building Skywipe taught the team the fundamentals: how to work with composite materials, how to wire a flight controller, how to iterate quickly when something breaks. It was our proof of concept — not for the judges, but for ourselves.</p>
+<!-- ================================================
+     SECTION 2 — FEATURES CAROUSEL
+     ================================================ -->
+<section class="features-section">
+  <div class="container">
+    <div class="features-header reveal">
+      <p class="section-eyebrow">Highlights</p>
+      <h2 class="section-title">Outstanding Features</h2>
+    </div>
+  </div>
 
-          <h2>Legacy</h2>
-          <p>Skywipe never competed, but it earned its place in the hangar. Every team member who worked on it carries the lessons forward. It's the reason X exists.</p>
+  <div class="features-carousel" id="featuresCarousel">
+    <div class="features-track" id="featuresTrack">
+
+      <!-- Slide 1 — Video -->
+      <div class="feature-slide">
+        <div class="feature-slide-inner">
+          <div class="feature-media">
+            <div class="feature-media-label">🎬 Flight Demo</div>
+            <video autoplay muted loop playsinline
+              src="../assets/videos/skywipe-flight.mp4"
+              onerror="this.style.display='none'"
+            ></video>
+            <div class="feature-media-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place video: assets/videos/skywipe-flight.mp4</span>
+            </div>
+          </div>
+          <div class="feature-info">
+            <p class="feature-number">Feature 01 / 04</p>
+            <h3 class="feature-title">Autonomous<br/>Flight Control</h3>
+            <p class="feature-desc">SkyWipe navigates complex building facades entirely on its own. Computer-vision mapping creates a real-time 3D surface model, allowing the drone to plan optimal cleaning paths with zero human input.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 — Image -->
+      <div class="feature-slide">
+        <div class="feature-slide-inner">
+          <div class="feature-media">
+            <div class="feature-media-label">📷 Cleaning Head</div>
+            <img src="../assets/images/feature-cleaning.jpeg" alt="Cleaning head"
+              onerror="this.style.opacity='0'" />
+            <div class="feature-media-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place image: assets/images/feature-cleaning.jpg</span>
+            </div>
+          </div>
+          <div class="feature-info">
+            <p class="feature-number">Feature 02 / 04</p>
+            <h3 class="feature-title">Precision<br/>Cleaning Module</h3>
+            <p class="feature-desc">A dual-brush ultrasonic cleaning head applies micro-vibrations to lift dirt at the molecular level. The pressurized spray system uses 80% less water than conventional methods while achieving superior results.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 — Video -->
+      <div class="feature-slide">
+        <div class="feature-slide-inner">
+          <div class="feature-media">
+            <div class="feature-media-label">🎬 Sensor Suite</div>
+            <video autoplay muted loop playsinline
+              src="../assets/videos/skywipe-sensors.mp4"
+              onerror="this.style.display='none'"
+            ></video>
+            <div class="feature-media-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place video: assets/videos/skywipe-sensors.mp4</span>
+            </div>
+          </div>
+          <div class="feature-info">
+            <p class="feature-number">Feature 03 / 04</p>
+            <h3 class="feature-title">360° Awareness<br/>System</h3>
+            <p class="feature-desc">Six ToF sensors fused with a forward-facing LiDAR give SkyWipe complete situational awareness in all weather. Dynamic obstacle avoidance keeps both the drone and building surfaces safe at all times.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 — Image -->
+      <div class="feature-slide">
+        <div class="feature-slide-inner">
+          <div class="feature-media">
+            <div class="feature-media-label">📷 Ground Station</div>
+            <img src="../assets/images/feature-gcs.jpeg" alt="Ground control station"
+              onerror="this.style.opacity='0'" />
+            <div class="feature-media-placeholder">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place image: assets/images/feature-gcs.jpg</span>
+            </div>
+          </div>
+          <div class="feature-info">
+            <p class="feature-number">Feature 04 / 04</p>
+            <h3 class="feature-title">Mission Planning<br/>Ground Station</h3>
+            <p class="feature-desc">Define a building's facade in minutes with our tablet-based GCS. Draw cleaning zones, set altitude limits, and launch — SkyWipe handles everything else, reporting live telemetry throughout each mission.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="carousel-controls">
+    <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" data-index="0"></button>
+      <button class="carousel-dot" data-index="1"></button>
+      <button class="carousel-dot" data-index="2"></button>
+      <button class="carousel-dot" data-index="3"></button>
+    </div>
+    <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTION 3 — DESIGN STATEMENT
+     ================================================ -->
+<section class="design-statement">
+  <div class="container">
+    <p class="design-eyebrow reveal">Design</p>
+    <h2 class="design-headline reveal">
+      Compact body.<br/><em>Extraordinary</em> reach.
+    </h2>
+    <p class="design-desc reveal">
+      Every surface of SkyWipe was engineered for a single purpose: to hover close, clean perfectly, and fly safely. The carbon-fiber frame weighs just 1.4 kg — yet it carries a full cleaning payload to any floor, any facade.
+    </p>
+    <div class="design-drone-showcase reveal">
+      <img
+        src="../assets/images/skywipe-design.jpeg"
+        alt="SkyWipe design view"
+        class="design-drone-img"
+        onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1929,#050a12);border-radius:12px;border:1px solid rgba(74,158,204,0.15);\'><p style=\'font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);\'>Place top-down design image: assets/images/skywipe-design.png</p></div>'"
+      />
+      <div class="design-glow"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTION 4 — SOFTWARE
+     ================================================ -->
+<section class="software-section">
+  <div class="container">
+    <div class="software-grid">
+      <div>
+        <p class="section-eyebrow reveal">Software</p>
+        <h2 class="section-title reveal" style="margin-bottom:24px;">
+          Intelligence<br/>runs deep.
+        </h2>
+        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.8;margin-bottom:48px;" class="reveal">
+          SkyWipe's onboard stack runs on a custom real-time OS built by the BFL'Y software team. Every module — from perception to motor control — is our own code, our own algorithms.
+        </p>
+        <div class="sw-modules reveal">
+          <div class="sw-module">
+            <p class="sw-module-name">SLAM Core</p>
+            <p class="sw-module-desc">Real-time simultaneous localization and 3D mapping</p>
+          </div>
+          <div class="sw-module">
+            <p class="sw-module-name">Path Planner</p>
+            <p class="sw-module-desc">Optimal coverage path generation for any facade shape</p>
+          </div>
+          <div class="sw-module">
+            <p class="sw-module-name">Vision AI</p>
+            <p class="sw-module-desc">Dirt detection and surface cleanliness verification</p>
+          </div>
+          <div class="sw-module">
+            <p class="sw-module-name">Telemetry</p>
+            <p class="sw-module-desc">MAVLink 2.0 live data link to ground station</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="software-visual">
+          <div class="code-glow"></div>
+          <div class="sw-bar">
+            <div class="sw-dot"></div><div class="sw-dot"></div><div class="sw-dot"></div>
+            <span class="sw-filename">skywipe_autopilot.py</span>
+          </div>
+          <pre class="sw-code"><span class="sw-comment"># SkyWipe Autopilot Core — BFL'Y SUAS</span>
+<span class="sw-keyword">import</span> <span class="sw-accent">skywipe</span> <span class="sw-keyword">as</span> <span class="sw-var">sw</span>
+<span class="sw-keyword">from</span> <span class="sw-accent">perception</span> <span class="sw-keyword">import</span> <span class="sw-func">SLAMEngine</span>, <span class="sw-func">DirtDetector</span>
+
+<span class="sw-keyword">class</span> <span class="sw-func">MissionController</span>:
+  <span class="sw-keyword">def</span> <span class="sw-func">__init__</span>(<span class="sw-var">self</span>, config):
+    <span class="sw-var">self</span>.slam  = <span class="sw-func">SLAMEngine</span>(res=<span class="sw-string">"high"</span>)
+    <span class="sw-var">self</span>.vision = <span class="sw-func">DirtDetector</span>(thresh=<span class="sw-number">0.82</span>)
+    <span class="sw-var">self</span>.path  = <span class="sw-func">CoveragePathPlanner</span>()
+
+  <span class="sw-keyword">async def</span> <span class="sw-func">run_mission</span>(<span class="sw-var">self</span>, facade_map):
+    plan = <span class="sw-keyword">await</span> <span class="sw-var">self</span>.path.<span class="sw-func">compute</span>(facade_map)
+    <span class="sw-keyword">for</span> <span class="sw-var">waypoint</span> <span class="sw-keyword">in</span> plan:
+      <span class="sw-keyword">await</span> sw.<span class="sw-func">fly_to</span>(<span class="sw-var">waypoint</span>)
+      dirty = <span class="sw-keyword">await</span> <span class="sw-var">self</span>.vision.<span class="sw-func">check</span>()
+      <span class="sw-keyword">if</span> dirty: <span class="sw-keyword">await</span> sw.<span class="sw-func">clean</span>()<span class="sw-cursor"></span></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTION 5 — CLOSE LOOK (Accordion + Image)
+     ================================================ -->
+<section class="close-look">
+  <div class="container">
+    <div class="close-look-header reveal">
+      <p class="section-eyebrow">Details</p>
+      <h2 class="section-title">A closer look.</h2>
+    </div>
+    <div class="close-look-grid">
+      <div class="accordion-list" id="accordionList">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger active" data-image="skywipe-detail-frame.jpg" data-label="Carbon Frame">
+            <span class="accordion-icon">+</span>
+            <span class="accordion-label">Carbon Fiber Frame</span>
+          </button>
+          <div class="accordion-body open">
+            <p>The monocoque carbon-fiber chassis weighs only 420 g while achieving a torsional rigidity that absorbs vibration from the cleaning module, protecting both optics and mechanical components.</p>
+          </div>
         </div>
 
-        <aside class="vd-specs" aria-label="Skywipe specifications">
-          <p class="vd-specs-title">Specifications</p>
-          <div class="spec-row">
-            <span class="spec-key">Year</span>
-            <span class="spec-val">2024</span>
+        <div class="accordion-item">
+          <button class="accordion-trigger" data-image="skywipe-detail-motors.jpg" data-label="Motors">
+            <span class="accordion-icon">+</span>
+            <span class="accordion-label">Brushless Motor Array</span>
+          </button>
+          <div class="accordion-body">
+            <p>Four 2306 2450KV motors are individually controlled by 35A ESCs with active braking, enabling sub-centimeter positioning accuracy even in 5 m/s crosswinds near high-rise facades.</p>
           </div>
-          <div class="spec-row">
-            <span class="spec-key">Type</span>
-            <span class="spec-val">Drone</span>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" data-image="skywipe-detail-lidar.jpg" data-label="LiDAR">
+            <span class="accordion-icon">+</span>
+            <span class="accordion-label">LiDAR Sensing</span>
+          </button>
+          <div class="accordion-body">
+            <p>A 16-beam rotating LiDAR generates 300,000 points per second. Combined with stereo cameras, the system builds a millimeter-accurate map of any glass surface before the first brush touch.</p>
           </div>
-          <div class="spec-row">
-            <span class="spec-key">Role</span>
-            <span class="spec-val">Cam Wiper</span>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" data-image="skywipe-detail-water.jpg" data-label="Water System">
+            <span class="accordion-icon">+</span>
+            <span class="accordion-label">Water Management</span>
+          </button>
+          <div class="accordion-body">
+            <p>An 800 ml pressurized reservoir feeds six precision nozzles. A moisture sensor in the brush head dynamically adjusts flow rate, eliminating streaks and reducing water use by 80% vs rope-access teams.</p>
           </div>
-          <div class="spec-row">
-            <span class="spec-key">Airframe</span>
-            <span class="spec-val">—</span>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" data-image="skywipe-detail-battery.jpg" data-label="Battery">
+            <span class="accordion-icon">+</span>
+            <span class="accordion-label">Power System</span>
+          </button>
+          <div class="accordion-body">
+            <p>A 6S 5000 mAh LiPo hot-swap system means zero downtime. While one battery pack flies, another charges at the ground station — enabling back-to-back missions without interruption.</p>
           </div>
-          <div class="spec-row">
-            <span class="spec-key">Status</span>
-            <span class="spec-val">Retired</span>
-          </div>
-        </aside>
+        </div>
 
       </div>
-    </div>
-  </main>
 
-  <nav class="vd-nav" aria-label="Between vehicles">
-    <div class="container">
-      <div class="vd-nav-inner">
-        <div></div>
-        <a href="vehicle-talon.html" class="vd-nav-link next">
-          <span class="vd-nav-hint">Next →</span>
-          <span class="vd-nav-name">Talon</span>
-        </a>
+      <div class="close-look-image-wrap" id="clImageWrap">
+        <div class="cl-placeholder" id="clPlaceholder">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span class="cl-placeholder-label" id="clLabel">Carbon Frame</span>
+          <span style="font-size:0.72rem;color:var(--text-muted);text-align:center;padding:0 24px;">Place detail images in assets/images/skywipe-detail-*.jpg</span>
+        </div>
+        <img src="" alt="" class="cl-image" id="clImage" style="display:none;" />
       </div>
     </div>
-  </nav>
+  </div>
+</section>
 
-  <footer class="footer" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-left">
-        <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
-        <p>Baykar Science High School · SUAS Team</p>
-      </div>
-      <div class="footer-right">
-        <p>Contact</p>
-        <a href="mailto:bflysavasaniha@gmail.com" class="footer-link">bflysavasaniha@gmail.com</a>
+<!-- ================================================
+     SECTION 6 — GENERAL OVERVIEW (Kızılelma style)
+     ================================================ -->
+<section class="general-overview">
+  <div class="container">
+    <div class="overview-inner reveal">
+      <div class="overview-rotated-label">General Info</div>
+      <div class="overview-content">
+        <h2 class="overview-title">
+          <span>Baykar Fen Lisesi SUAS</span>
+          SKY<br/>WIPE
+        </h2>
+        <div class="overview-text">
+          <p>
+            SkyWipe is the inaugural vehicle of the BFL'Y SUAS team — a fully autonomous unmanned aerial system designed to clean glass surfaces on high-rise buildings without any rope-access infrastructure. Built ground-up by students of Baykar Science High School, it represents the convergence of aerospace engineering, computer vision, and mechatronics in a single 1.4 kg platform.
+          </p>
+          <p>
+            The vehicle integrates a custom-developed autopilot stack with a proprietary cleaning module, enabling it to plan, execute, and verify complete facade cleaning missions. Its modular architecture allows rapid reconfiguration for different building profiles, surface materials, and weather conditions — setting the foundation for a scalable urban cleaning system.
+          </p>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 BFL'Y — Baykar Fen Lisesi SUAS Team</p>
-    </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="../js/main.js"></script>
+<!-- ================================================
+     SECTION 7 — SCROLL-SYNCED 3D
+     ================================================ -->
+<section class="scroll-3d-section" id="scroll3dSection">
+  <div class="scroll-3d-sticky">
+    <div class="scroll-3d-inner">
+      <div class="scroll-3d-info">
+        <p class="section-eyebrow">In Motion</p>
+        <h2 class="scroll-3d-title">See every<br/>angle.</h2>
+        <p class="scroll-3d-desc">Scroll to rotate SkyWipe through its full flight attitude — from approach angle to head-on cleaning position.</p>
+        <div class="scroll-3d-steps">
+          <div class="scroll-step active" data-step="0">
+            <span class="scroll-step-num">01</span>
+            <p>Approach attitude — angled for rapid transit between floors</p>
+          </div>
+          <div class="scroll-step" data-step="1">
+            <span class="scroll-step-num">02</span>
+            <p>Transition — decelerating into cleaning position alignment</p>
+          </div>
+          <div class="scroll-step" data-step="2">
+            <span class="scroll-step-num">03</span>
+            <p>Cleaning position — brush head perpendicular to glass surface</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-3d-canvas">
+        <div class="drone-3d-wrap">
+          <img
+            src="../assets/images/skywipe-3d.png"
+            alt="SkyWipe 3D rotation"
+            class="drone-3d-img"
+            id="drone3dImg"
+            onerror="this.style.opacity='0.3'"
+          />
+        </div>
+        <div class="drone-progress-ring">
+          <div class="drone-progress-fill" id="droneProgress"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTION 8 — TECHNICAL SPECS
+     ================================================ -->
+<section class="specs-section">
+  <div class="container">
+    <div class="specs-header">
+      <p class="section-eyebrow reveal">Specifications</p>
+      <h2 class="section-title reveal">Technical Data</h2>
+    </div>
+    <div class="specs-grid reveal">
+      <div class="specs-category">
+        <p class="specs-cat-title">Airframe</p>
+        <div class="spec-row"><span class="spec-key">MTOW</span><span class="spec-val">2.2 kg</span></div>
+        <div class="spec-row"><span class="spec-key">Frame Weight</span><span class="spec-val">420 g</span></div>
+        <div class="spec-row"><span class="spec-key">Wheelbase</span><span class="spec-val">380 mm</span></div>
+        <div class="spec-row"><span class="spec-key">Material</span><span class="spec-val">3K Carbon Fiber</span></div>
+        <div class="spec-row"><span class="spec-key">IP Rating</span><span class="spec-val">IP54</span></div>
+      </div>
+      <div class="specs-category">
+        <p class="specs-cat-title">Performance</p>
+        <div class="spec-row"><span class="spec-key">Max Flight Time</span><span class="spec-val">25 min</span></div>
+        <div class="spec-row"><span class="spec-key">Operational Altitude</span><span class="spec-val">0 – 120 m AGL</span></div>
+        <div class="spec-row"><span class="spec-key">Max Wind Speed</span><span class="spec-val">5 m/s</span></div>
+        <div class="spec-row"><span class="spec-key">Position Accuracy</span><span class="spec-val">±2 cm (RTK)</span></div>
+        <div class="spec-row"><span class="spec-key">Coverage Rate</span><span class="spec-val">~18 m² / min</span></div>
+      </div>
+      <div class="specs-category">
+        <p class="specs-cat-title">Propulsion</p>
+        <div class="spec-row"><span class="spec-key">Motors</span><span class="spec-val">4× 2306 2450KV</span></div>
+        <div class="spec-row"><span class="spec-key">ESCs</span><span class="spec-val">4× 35A BLHeli32</span></div>
+        <div class="spec-row"><span class="spec-key">Propellers</span><span class="spec-val">5" 3-blade CF</span></div>
+        <div class="spec-row"><span class="spec-key">Battery</span><span class="spec-val">6S 5000 mAh LiPo</span></div>
+        <div class="spec-row"><span class="spec-key">Max Thrust</span><span class="spec-val">4.8 kg total</span></div>
+      </div>
+      <div class="specs-category">
+        <p class="specs-cat-title">Sensing & Comms</p>
+        <div class="spec-row"><span class="spec-key">LiDAR</span><span class="spec-val">16-beam, 100 m range</span></div>
+        <div class="spec-row"><span class="spec-key">Stereo Camera</span><span class="spec-val">OV9281 × 2, 60fps</span></div>
+        <div class="spec-row"><span class="spec-key">ToF Sensors</span><span class="spec-val">6× VL53L5CX</span></div>
+        <div class="spec-row"><span class="spec-key">Data Link</span><span class="spec-val">MAVLink 2.0 / 5.8 GHz</span></div>
+        <div class="spec-row"><span class="spec-key">Control Link</span><span class="spec-val">2.4 GHz ELRS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTION 9 — GALLERY & MEDIA
+     ================================================ -->
+<section class="gallery-section">
+  <div class="container">
+    <div class="gallery-header">
+      <p class="section-eyebrow reveal">Gallery</p>
+      <h2 class="section-title reveal">Media</h2>
+    </div>
+    <div class="gallery-tabs reveal">
+      <button class="gallery-tab active" data-tab="all">All</button>
+      <button class="gallery-tab" data-tab="photos">Photos</button>
+      <button class="gallery-tab" data-tab="videos">Videos</button>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/images/gallery-1.jpg</span>
+        </div>
+        <div class="gallery-item-label">First Flight · March 2025</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/videos/gallery-2.mp4</span>
+        </div>
+        <div class="gallery-item-label">Cleaning Demo</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/images/gallery-3.jpg</span>
+        </div>
+        <div class="gallery-item-label">Build Process</div>
+      </div>
+      <div class="gallery-item">
+        <div class="gallery-placeholder">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/images/gallery-4.jpg</span>
+        </div>
+        <div class="gallery-item-label">Sensor Integration</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SECTION 10 — MISSION BADGE (CTA)
+     ================================================ -->
+<section class="mission-section">
+  <div class="container">
+    <div class="mission-badge reveal">
+      <span class="mission-badge-dot"></span>
+      <span class="mission-badge-text">Active Development — 2024/25 Season</span>
+    </div>
+    <h2 class="mission-headline reveal">
+      Our first drone.<br/>Our biggest step.
+    </h2>
+    <p class="mission-desc reveal">
+      SkyWipe began as an idea in a high-school classroom and became a flying, cleaning machine. It's only the beginning for the BFL'Y team.
+    </p>
+    <div class="mission-cta reveal">
+      <a href="../pages/team.html" class="btn btn-primary">Meet the Team ↗</a>
+      <a href="../pages/gallery.html" class="btn btn-ghost">View Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-left">
+      <span class="logo-text" style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;letter-spacing:0.05em;">BFL<span class="logo-accent">'Y</span></span>
+      <p>Baykar Science High School SUAS Team</p>
+    </div>
+    <div class="footer-right">
+      <p>Contact</p>
+      <a href="mailto:bfly@baykarfenlisesi.com" class="footer-link">bfly@baykarfenlisesi.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 BFL'Y SUAS Team — Baykar Fen Lisesi. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ================================================
+     SCRIPTS
+     ================================================ -->
+<script>
+  /* ---- Hotspots ---- */
+  document.querySelectorAll('.hotspot').forEach(hs => {
+    const tip = hs.querySelector('.hotspot-tooltip');
+    tip.innerHTML = hs.dataset.tip || '';
+    hs.addEventListener('mouseenter', () => hs.classList.add('active'));
+    hs.addEventListener('mouseleave', () => hs.classList.remove('active'));
+    hs.addEventListener('click', () => hs.classList.toggle('active'));
+  });
+
+  /* ---- Features Carousel ---- */
+  const track = document.getElementById('featuresTrack');
+  const dots  = document.querySelectorAll('.carousel-dot');
+  let current = 0;
+  const total = 4;
+  let autoTimer;
+
+  function goTo(n) {
+    current = (n + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+  document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
+
+  function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => goTo(current + 1), 5000); }
+  resetAuto();
+
+  /* ---- Accordion ---- */
+  const clImage = document.getElementById('clImage');
+  const clPlaceholder = document.getElementById('clPlaceholder');
+  const clLabel = document.getElementById('clLabel');
+
+  document.querySelectorAll('.accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.classList.contains('active');
+      document.querySelectorAll('.accordion-trigger').forEach(b => {
+        b.classList.remove('active');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('active');
+        btn.nextElementSibling.classList.add('open');
+      }
+      // Update right-side image
+      const src  = `../assets/images/${btn.dataset.image}`;
+      const label = btn.dataset.label || '';
+      clLabel.textContent = label;
+      clImage.src = src;
+      clImage.alt = label;
+      clImage.style.display = 'block';
+      clImage.onerror = () => { clImage.style.display = 'none'; clPlaceholder.style.display = 'flex'; };
+      clImage.onload  = () => { clPlaceholder.style.display = 'none'; };
+    });
+  });
+
+  /* ---- Scroll 3D Rotation ---- */
+  const s3d      = document.getElementById('scroll3dSection');
+  const img3d    = document.getElementById('drone3dImg');
+  const progress = document.getElementById('droneProgress');
+  const steps    = document.querySelectorAll('.scroll-step');
+
+  window.addEventListener('scroll', () => {
+    const rect   = s3d.getBoundingClientRect();
+    const total3 = s3d.offsetHeight - window.innerHeight;
+    const scrolled = -rect.top;
+    const p = Math.max(0, Math.min(1, scrolled / total3));
+
+    // Rotate from -35deg (approach) to 0deg (head-on)
+    const rotY = -35 + p * 35;
+    const rotX = -8  + p * 8;
+    if (img3d) {
+      img3d.style.transform = `rotateY(${rotY}deg) rotateX(${rotX}deg) scale(${0.9 + p * 0.15})`;
+    }
+    progress.style.height = `${p * 100}%`;
+
+    // Activate steps
+    const stepIndex = p < 0.33 ? 0 : p < 0.66 ? 1 : 2;
+    steps.forEach((s, i) => s.classList.toggle('active', i === stepIndex));
+  }, { passive: true });
+
+  /* ---- Reveal on scroll ---- */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ---- Lang Toggle ---- */
+  document.getElementById('lang-en').addEventListener('click', () => {
+    document.getElementById('lang-en').classList.add('active');
+    document.getElementById('lang-tr').classList.remove('active');
+  });
+  document.getElementById('lang-tr').addEventListener('click', () => {
+    document.getElementById('lang-tr').classList.add('active');
+    document.getElementById('lang-en').classList.remove('active');
+  });
+
+  /* ---- Hamburger ---- */
+  document.getElementById('hamburger').addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+
+  /* ---- Gallery tabs (visual only) ---- */
+  document.querySelectorAll('.gallery-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+</script>
+
 </body>
 </html>
