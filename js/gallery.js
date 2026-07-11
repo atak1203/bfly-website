@@ -64,49 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
       category: 'team'
     },
     {
-      src: '../assets/images/galery/flight02.jpg',
-      alt_en: 'DeliFisek first flight 2', alt_tr: 'DeliFişek ilk uçuş 2',
-      caption_en: 'First flight — June 2024', caption_tr: 'İlk uçuş — Haziran 2024',
-      category: 'flight'
-    },
-    {
       src: '../assets/images/galery/competition01.jpg',
       alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
       caption_en: 'Competition photo — June 2024', caption_tr: 'Yarışma fotoğrafı — Haziran 2024',
       category: 'competition'
     },
-    {
-      src: '../assets/images/galery/team02.jpg',
-      alt_en: 'DeliFisek team photo 2', alt_tr: 'DeliFişek takımlı fotoğraf 2',
-      caption_en: 'Team photo — June 2024', caption_tr: 'Takımlı fotoğraf — Haziran 2024',
-      category: 'team'
-    },
-    {
-      src: '../assets/images/galery/build01.jpg',
-      alt_en: 'DeliFisek build photo', alt_tr: 'DeliFişek üretim fotoğrafı',
-      caption_en: 'Build photo — June 2024', caption_tr: 'Üretim fotoğrafı — Haziran 2024',
-      category: 'build'
-    },
-    {
-      src: '../assets/images/galery/flight03.jpg',
-      alt_en: 'DeliFisek first flight 3', alt_tr: 'DeliFişek ilk uçuş 3',
-      caption_en: 'First flight — June 2024', caption_tr: 'İlk uçuş — Haziran 2024',
-      category: 'flight'
-    },
-    {
-      src: '../assets/images/galery/flight04.jpg',
-      alt_en: 'DeliFisek first flight 4', alt_tr: 'DeliFişek ilk uçuş 4',
-      caption_en: 'First flight — June 2024', caption_tr: 'İlk uçuş — Haziran 2024',
-      category: 'flight'
-    },
-    {
-      src: '../assets/images/galery/flight05.jpg',
-      alt_en: 'DeliFisek first flight 5', alt_tr: 'DeliFişek ilk uçuş 5',
-      caption_en: 'First flight — June 2024', caption_tr: 'İlk uçuş — Haziran 2024',
-      category: 'flight'
-    },
-
-
   ];
 
   /* ===== PLACEHOLDER LIST (fotoğraf yokken gösterilir) ===== */
