@@ -37,7 +37,7 @@ const TICKER_NEWS = [
       title_tr: 'Delifişek, Üçüncü Uçuş Denemesini Başarıyla Gerçekleştirdi',
       excerpt_en: 'Following its first two flight tests, Delifişek completed its third flight trial. In this attempt, the aircraft managed to fly autonomously for several minutes.',
       excerpt_tr: 'İlk iki uçuş denemesinin ardından Delifişek, üçüncü uçuş denemesini de gerçekleştirdi. Bu denemede araç, dakikalarca otonom uçmayı başardı.',
-      image: '../assets/images/1.jpg',
+      image: '../assets/images/blog/2.jpg',
       link: '#'
     },
     {

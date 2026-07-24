@@ -52,22 +52,178 @@ document.addEventListener('DOMContentLoaded', () => {
   ===== */
   const PHOTOS = [
     {
-      src: '../assets/images/galery/flight01.jpeg',
+      src: '../assets/images/galery/1.jpeg',
       alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
       caption_en: 'First flight — June 2024', caption_tr: 'İlk uçuş — Haziran 2024',
-      category: 'flight'
-    },
-    {
-      src: '../assets/images/galery/team01.jpeg',
-      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
-      caption_en: 'Team photo — June 2024', caption_tr: 'Takımlı fotoğraf — Haziran 2024',
       category: 'team'
     },
     {
-      src: '../assets/images/galery/competition01.jpg',
+      src: '../assets/images/galery/2.jpeg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: 'Team photo — June 2024', caption_tr: 'Takımlı fotoğraf — Haziran 2024',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/3.jpg',
       alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
       caption_en: 'Competition photo — June 2024', caption_tr: 'Yarışma fotoğrafı — Haziran 2024',
-      category: 'competition'
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/4.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/5.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/6.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/7.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/8.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/9.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/10.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/11.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/12.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/13.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/14.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/15.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/16.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/17.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/18.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/19.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/20.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/21.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/22.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'none'
+    },
+    {
+      src: '../assets/images/galery/23.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'none'
+    },
+    {
+      src: '../assets/images/galery/24.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/25.jpg',
+      alt_en: 'DeliFisek first flight', alt_tr: 'DeliFişek ilk uçuş',
+      caption_en: '', caption_tr: '',
+      category: 'team'
+    },
+    {
+      src: '../assets/images/galery/26.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/27.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'flight'
+    },
+    {
+      src: '../assets/images/galery/28.jpg',
+      alt_en: 'DeliFisek team photo', alt_tr: 'DeliFişek takımlı fotoğraf',
+      caption_en: '', caption_tr: '',
+      category: 'build'
+    },
+    {
+      src: '../assets/images/galery/29.jpg',
+      alt_en: 'Teknofest photo', alt_tr: 'Teknofest fotoğrafı',
+      caption_en: '', caption_tr: '',
+      category: 'build'
     },
   ];
 
