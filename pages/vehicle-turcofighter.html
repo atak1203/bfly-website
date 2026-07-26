@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Turcofighter — BFL'Y SUAS Team</title>
+  <title>Turco Fighter — BFL'Y Savaşan İHA Takımı</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,7 @@
 
   <style>
     /* =============================================
-       GLOBAL — inherits from style.css design tokens
+       GLOBAL — style.css tasarım tokenlarından türetildi
        ============================================= */
     :root {
       --bg:          #0D1117;
@@ -101,7 +101,7 @@
     }
 
     /* =============================================
-       SECTION 1 — HERO (Full-screen + Hotspots)
+       BÖLÜM 1 — HERO (Tam ekran + Etkileşim noktaları)
        ============================================= */
     .hero-vehicle {
       position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
@@ -125,7 +125,7 @@
       width: 100%; height: auto;
       filter: drop-shadow(0 40px 80px rgba(74,158,204,0.25));
     }
-    /* Hotspot system */
+    /* Hotspot sistemi */
     .hotspot {
       position: absolute; width: 36px; height: 36px; cursor: pointer;
       transform: translate(-50%, -50%);
@@ -147,7 +147,7 @@
     .hotspot-tooltip {
       position: absolute; left: 50%; bottom: calc(100% + 14px); transform: translateX(-50%);
       background: rgba(255,255,255,0.96); color: #0a1929;
-      padding: 10px 16px; border-radius: 8px; width: max-content; max-width: 220px;
+      padding: 10px 16px; border-radius: 8px; width: max-content; max-width: 240px;
       font-size: 0.8rem; font-weight: 600; line-height: 1.4; text-align: center;
       pointer-events: none; opacity: 0; transition: opacity 0.2s ease, transform 0.2s ease;
       transform: translateX(-50%) translateY(6px);
@@ -192,7 +192,7 @@
     }
 
     /* =============================================
-       SECTION 2 — FEATURES CAROUSEL
+       BÖLÜM 2 — ÖNE ÇIKANLAR (Carousel)
        ============================================= */
     .features-section {
       padding: 100px 0; background: var(--bg-dark);
@@ -269,7 +269,7 @@
     .carousel-dot.active { background: var(--accent); width: 24px; border-radius: 3px; }
 
     /* =============================================
-       SECTION 3 — DESIGN STATEMENT (Apple style)
+       BÖLÜM 3 — TASARIM FELSEFESİ
        ============================================= */
     .design-statement {
       padding: 140px 0; background: var(--bg); text-align: center; overflow: hidden;
@@ -285,7 +285,7 @@
     }
     .design-headline em { font-style: normal; color: var(--accent); }
     .design-desc {
-      max-width: 560px; margin: 0 auto 80px; color: var(--text-muted);
+      max-width: 580px; margin: 0 auto 80px; color: var(--text-muted);
       font-size: 1.05rem; line-height: 1.8;
     }
     .design-drone-showcase {
@@ -307,7 +307,7 @@
     }
 
     /* =============================================
-       SECTION 4 — SOFTWARE (dark, code aesthetic)
+       BÖLÜM 4 — YAZILIM (kod estetiği)
        ============================================= */
     .software-section {
       padding: 120px 0; background: var(--bg-dark);
@@ -370,7 +370,7 @@
     .sw-module-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
 
     /* =============================================
-       SECTION 5 — CLOSE LOOK (accordion + image)
+       BÖLÜM 5 — YAKIN İNCELEME (akordeon + görsel)
        ============================================= */
     .close-look {
       padding: 120px 0; background: var(--bg);
@@ -404,7 +404,7 @@
     .accordion-body {
       max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out);
     }
-    .accordion-body.open { max-height: 220px; }
+    .accordion-body.open { max-height: 260px; }
     .accordion-body p {
       padding: 0 0 20px 38px; font-size: 0.88rem; color: var(--text-muted); line-height: 1.75;
     }
@@ -430,7 +430,7 @@
     }
 
     /* =============================================
-       SECTION 6 — GENERAL OVERVIEW (Kızılelma style)
+       BÖLÜM 6 — GENEL BİLGİ
        ============================================= */
     .general-overview {
       padding: 120px 0;
@@ -455,12 +455,12 @@
     .overview-title span { display: block; color: var(--accent); font-size: 0.55em; font-weight: 400; letter-spacing: 0.08em; margin-bottom: 8px; }
     .overview-text p {
       font-size: 0.95rem; color: rgba(240,240,245,0.75); line-height: 1.9;
-      margin-bottom: 24px; max-width: 700px; text-align: justify;
+      margin-bottom: 24px; max-width: 720px; text-align: justify;
     }
     .overview-text p:last-child { margin-bottom: 0; }
 
     /* =============================================
-       SECTION 7 — SCROLL-SYNCED ZOOM (The Showpiece)
+       BÖLÜM 7 — KAYDIRMA İLE YAKINLAŞMA
        ============================================= */
     .scroll-3d-section {
       position: relative; height: 300vh;
@@ -515,7 +515,7 @@
     }
 
     /* =============================================
-       SECTION 8 — COMPETITION TIMELINE
+       BÖLÜM 8 — YARIŞMA TAKVİMİ
        ============================================= */
     .timeline-section {
       padding: 120px 0; background: var(--bg);
@@ -544,7 +544,7 @@
     .tl-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.65; }
 
     /* =============================================
-       SECTION 9 — TECHNICAL SPECS
+       BÖLÜM 9 — TEKNİK ÖZELLİKLER
        ============================================= */
     .specs-section {
       padding: 120px 0; background: var(--bg-dark);
@@ -571,7 +571,7 @@
     }
 
     /* =============================================
-       SECTION 10 — GALLERY & MEDIA
+       BÖLÜM 10 — GALERİ VE MEDYA
        ============================================= */
     .gallery-section {
       padding: 120px 0; background: var(--bg);
@@ -616,7 +616,7 @@
     }
 
     /* =============================================
-       SECTION 11 — BETWEEN VEHICLES NAV
+       BÖLÜM 11 — ARAÇLAR ARASI GEÇİŞ
        ============================================= */
     .vd-nav { padding: 48px 0; background: var(--bg-dark); border-top: 1px solid var(--border-dim); }
     .vd-nav-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
@@ -627,7 +627,7 @@
     .vd-nav-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--accent); }
 
     /* =============================================
-       SECTION 12 — MISSION BADGE (bonus)
+       BÖLÜM 12 — GÖREV ROZETİ (CTA)
        ============================================= */
     .mission-section {
       padding: 100px 0; background: var(--bg);
@@ -638,14 +638,14 @@
       background: var(--bg-card); border: 1px solid rgba(74,158,204,0.3);
       border-radius: 40px; padding: 10px 24px; margin-bottom: 48px;
     }
-    .mission-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #8899BB; }
+    .mission-badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #4A9ECC; }
     .mission-badge-text { font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
     .mission-headline {
       font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3.5rem);
       font-weight: 900; max-width: 700px; margin: 0 auto 24px; line-height: 1.1;
     }
     .mission-desc {
-      max-width: 480px; margin: 0 auto 48px; color: var(--text-muted);
+      max-width: 520px; margin: 0 auto 48px; color: var(--text-muted);
       font-size: 0.95rem; line-height: 1.8;
     }
     .btn {
@@ -683,7 +683,7 @@
     .footer-bottom p { font-size: 0.75rem; color: var(--text-muted); }
 
     /* =============================================
-       REVEAL ANIMATIONS
+       AÇILMA ANİMASYONLARI
        ============================================= */
     .reveal {
       opacity: 0; transform: translateY(32px);
@@ -732,21 +732,21 @@
       <span class="logo-text">BFL<span class="logo-accent">'Y</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="../index.html#home" class="nav-link">Home</a></li>
-      <li><a href="../pages/team.html" class="nav-link">Team</a></li>
-      <li><a href="../pages/vehicle.html" class="nav-link active">Vehicle</a></li>
+      <li><a href="../index.html#home" class="nav-link">Anasayfa</a></li>
+      <li><a href="../pages/team.html" class="nav-link">Takım</a></li>
+      <li><a href="../pages/vehicle.html" class="nav-link active">Araç</a></li>
       <li><a href="../pages/blog.html" class="nav-link">Blog</a></li>
-      <li><a href="../pages/gallery.html" class="nav-link">Gallery</a></li>
-      <li><a href="../pages/sponsors.html" class="nav-link">Sponsors</a></li>
-      <li><a href="../pages/contact.html" class="nav-link">Contact</a></li>
+      <li><a href="../pages/gallery.html" class="nav-link">Galeri</a></li>
+      <li><a href="../pages/sponsors.html" class="nav-link">Sponsorlar</a></li>
+      <li><a href="../pages/contact.html" class="nav-link">İletişim</a></li>
     </ul>
     <div class="nav-right">
-      <button class="lang-toggle" aria-label="Language toggle">
-        <span class="lang-option active" id="lang-en">EN</span>
+      <button class="lang-toggle" aria-label="Dil seçimi">
+        <span class="lang-option" id="lang-en">EN</span>
         <span class="lang-divider">/</span>
-        <span class="lang-option" id="lang-tr">TR</span>
+        <span class="lang-option active" id="lang-tr">TR</span>
       </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <button class="hamburger" id="hamburger" aria-label="Menü">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -754,49 +754,49 @@
 </nav>
 
 <!-- ================================================
-     SECTION 1 — HERO
+     BÖLÜM 1 — HERO
      ================================================ -->
 <section class="hero-vehicle">
   <div class="hero-bg-grid"></div>
-  <a href="../pages/vehicle.html" style="position:absolute; top:calc(var(--nav-height) + 24px); left:24px; z-index:4; font-family:var(--font-display); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); transition:color 0.2s ease;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">← All Vehicles</a>
+  <a href="../pages/vehicle.html" style="position:absolute; top:calc(var(--nav-height) + 24px); left:24px; z-index:4; font-family:var(--font-display); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); transition:color 0.2s ease;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-muted)'">← Tüm Araçlar</a>
 
   <div class="hero-vehicle-wrap">
-    <!-- Replace src with your actual aircraft image -->
+    <!-- Gerçek uçak görseliyle değiştirin -->
     <img
       src="../assets/images/turcofighter-hero.png"
-      alt="Turcofighter Aircraft"
+      alt="Turco Fighter İnsansız Hava Aracı"
       class="hero-drone-img"
       id="heroDroneImg"
       onerror="this.style.display='none'; document.getElementById('heroDroneFallback').style.display='flex'"
     />
-    <!-- Fallback if image missing -->
+    <!-- Görsel bulunamazsa yedek gösterim -->
     <div id="heroDroneFallback" style="display:none; width:100%; aspect-ratio:16/6; background:linear-gradient(135deg,#0a1929,#050a12); border-radius:12px; align-items:center; justify-content:center; border:1px solid rgba(74,158,204,0.2);">
       <div style="text-align:center; color:var(--text-muted);">
         <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        <p style="font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-top:16px;">Turcofighter · Place image at assets/images/turcofighter-hero.png</p>
+        <p style="font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-top:16px;">Turco Fighter · Görseli assets/images/turcofighter-hero.png konumuna yerleştirin</p>
       </div>
     </div>
 
-    <!-- Hotspot 1 — Airframe -->
-    <div class="hotspot" style="top: 40%; left: 30%;" data-tip="Ready-Made Talon EPO Airframe<br/>1718mm flying-wing platform">
+    <!-- Hotspot 1 — Gövde -->
+    <div class="hotspot" style="top: 40%; left: 30%;" data-tip="Hazır Talon EPO Gövde<br/>1718 mm kanat açıklığına sahip uçan kanat platformu">
       <div class="hotspot-ring"></div>
       <div class="hotspot-dot"></div>
       <div class="hotspot-tooltip"></div>
     </div>
-    <!-- Hotspot 2 — Vision / Avionics Bay -->
-    <div class="hotspot" style="top: 22%; left: 50%;" data-tip="Custom Avionics Bay<br/>Autopilot + onboard vision system">
+    <!-- Hotspot 2 — Aviyonik Bölmesi -->
+    <div class="hotspot" style="top: 22%; left: 50%;" data-tip="Özel Aviyonik Bölmesi<br/>Pixhawk Cube Orange uçuş kontrolcüsü + Jetson TX2 NX görev bilgisayarı">
       <div class="hotspot-ring"></div>
       <div class="hotspot-dot"></div>
       <div class="hotspot-tooltip"></div>
     </div>
-    <!-- Hotspot 3 — Pusher Propulsion -->
-    <div class="hotspot" style="top: 52%; left: 68%;" data-tip="Pusher Propulsion<br/>950KV brushless, 25 min endurance">
+    <!-- Hotspot 3 — İtki Sistemi -->
+    <div class="hotspot" style="top: 52%; left: 68%;" data-tip="İtici (Pusher) Motor<br/>SunnySky X3520 V3 780KV fırçasız motor, ~20 dakika uçuş süresi">
       <div class="hotspot-ring"></div>
       <div class="hotspot-dot"></div>
       <div class="hotspot-tooltip"></div>
     </div>
-    <!-- Hotspot 4 — Target Neutralization Module -->
-    <div class="hotspot" style="top: 66%; left: 42%;" data-tip="Target Neutralization Module<br/>Integrated for Savaşan İHA missions">
+    <!-- Hotspot 4 — Otonom Görev Modülü -->
+    <div class="hotspot" style="top: 66%; left: 42%;" data-tip="Otonom Görev Yazılımı<br/>Savaşan İHA kilitlenme ve Kamikaze QR-kod görevleri için özgün algoritmalar">
       <div class="hotspot-ring"></div>
       <div class="hotspot-dot"></div>
       <div class="hotspot-tooltip"></div>
@@ -804,111 +804,111 @@
   </div>
 
   <div class="hero-title-overlay">
-    <p class="hero-eyebrow-small">BFL'Y SUAS Team · Competition Debut</p>
+    <p class="hero-eyebrow-small">BFL'Y Savaşan İHA Takımı · AF-Tech Savaşan İHA · TEKNOFEST 2025</p>
     <h1 class="hero-name">TURCO<span class="accent">FIGHTER</span></h1>
-    <p class="hero-name-sub">Ready-Made Combat UAV Platform · TEKNOFEST Savaşan İHA</p>
+    <p class="hero-name-sub">Hazır Gövdeli Muharip İHA Platformu · TEKNOFEST Savaşan İHA</p>
   </div>
 
   <div class="scroll-hint">
     <span class="scroll-arrow">↓</span>
-    <span>Scroll to explore</span>
+    <span>Keşfetmek için kaydırın</span>
   </div>
 </section>
 
 <!-- ================================================
-     SECTION 2 — FEATURES CAROUSEL
+     BÖLÜM 2 — ÖNE ÇIKANLAR
      ================================================ -->
 <section class="features-section">
   <div class="container">
     <div class="features-header reveal">
-      <p class="section-eyebrow">Highlights</p>
-      <h2 class="section-title">What We Built Into It</h2>
+      <p class="section-eyebrow">Öne Çıkanlar</p>
+      <h2 class="section-title">Bu Araca Neler Kattık</h2>
     </div>
   </div>
 
   <div class="features-carousel" id="featuresCarousel">
     <div class="features-track" id="featuresTrack">
 
-      <!-- Slide 1 -->
+      <!-- Slayt 1 -->
       <div class="feature-slide">
         <div class="feature-slide-inner">
           <div class="feature-media">
-            <div class="feature-media-label">🎬 Flight Demo</div>
+            <div class="feature-media-label">🎬 Uçuş Görüntüsü</div>
             <video autoplay muted loop playsinline
               src="../assets/videos/turcofighter-flight.mp4"
               onerror="this.style.display='none'"
             ></video>
             <div class="feature-media-placeholder">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place video: assets/videos/turcofighter-flight.mp4</span>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Video için: assets/videos/turcofighter-flight.mp4</span>
             </div>
           </div>
           <div class="feature-info">
-            <p class="feature-number">Feature 01 / 04</p>
-            <h3 class="feature-title">Proven Airframe,<br/>Our Own Integration</h3>
-            <p class="feature-desc">Turcofighter uses a ready-made Talon EPO flying-wing airframe. Instead of manufacturing the structure, the team focused entirely on integrating a custom autopilot, telemetry, and vision stack into a platform already known for stable, efficient flight.</p>
+            <p class="feature-number">Özellik 01 / 04</p>
+            <h3 class="feature-title">Kanıtlanmış Gövde,<br/>Kendi Entegrasyonumuz</h3>
+            <p class="feature-desc">Turco Fighter, hazır alınan TALON EPO FPV 1718 mm ARF uçan kanat gövdesini kullanır. Gövdeyi imal etmek yerine tüm emeğimizi Pixhawk Cube Orange uçuş kontrolcüsü, Jetson TX2 NX görev bilgisayarı ve özgün otonom yazılım yığınının entegrasyonuna verdik.</p>
           </div>
         </div>
       </div>
 
-      <!-- Slide 2 -->
+      <!-- Slayt 2 -->
       <div class="feature-slide">
         <div class="feature-slide-inner">
           <div class="feature-media">
-            <div class="feature-media-label">📷 Vision System</div>
-            <img src="../assets/images/turcofighter-vision.jpeg" alt="Onboard vision system"
+            <div class="feature-media-label">📷 Görüntü Sistemi</div>
+            <img src="../assets/images/turcofighter-vision.jpeg" alt="Uçak üstü görüntü sistemi"
               onerror="this.style.opacity='0'" />
             <div class="feature-media-placeholder">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place image: assets/images/turcofighter-vision.jpg</span>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Görsel için: assets/images/turcofighter-vision.jpg</span>
             </div>
           </div>
           <div class="feature-info">
-            <p class="feature-number">Feature 02 / 04</p>
-            <h3 class="feature-title">Autonomous Target<br/>Detection</h3>
-            <p class="feature-desc">An onboard camera feeds a lightweight image-processing pipeline that identifies and tracks competition targets in real time, letting Turcofighter fly its engagement pattern with minimal ground-crew input.</p>
+            <p class="feature-number">Özellik 02 / 04</p>
+            <h3 class="feature-title">Otonom Hedef<br/>Tespiti ve Takibi</h3>
+            <p class="feature-desc">Burun kısmına yerleştirilen Raspberry Pi HQ Kamera'dan gelen görüntüler, özel veri setiyle eğitilmiş bir YOLOv5s modeli ve Genişletilmiş Kalman Filtresi (EKF) ile işlenir. Sistem, Jetson TX2 NX üzerinde TensorRT ve FP16 optimizasyonuyla 25-30 FPS'de çalışır.</p>
           </div>
         </div>
       </div>
 
-      <!-- Slide 3 -->
+      <!-- Slayt 3 -->
       <div class="feature-slide">
         <div class="feature-slide-inner">
           <div class="feature-media">
-            <div class="feature-media-label">🎬 Competition Footage</div>
+            <div class="feature-media-label">🎬 Yarışma Görüntüsü</div>
             <video autoplay muted loop playsinline
               src="../assets/videos/turcofighter-competition.mp4"
               onerror="this.style.display='none'"
             ></video>
             <div class="feature-media-placeholder">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place video: assets/videos/turcofighter-competition.mp4</span>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Video için: assets/videos/turcofighter-competition.mp4</span>
             </div>
           </div>
           <div class="feature-info">
-            <p class="feature-number">Feature 03 / 04</p>
-            <h3 class="feature-title">Built for TEKNOFEST<br/>Savaşan İHA</h3>
-            <p class="feature-desc">Every subsystem — from flight envelope to the target-neutralization module — was tuned specifically for Savaşan İHA's shared-airspace rules, where safe autonomous maneuvering matters as much as raw performance.</p>
+            <p class="feature-number">Özellik 03 / 04</p>
+            <h3 class="feature-title">TEKNOFEST Savaşan<br/>İHA İçin Geliştirildi</h3>
+            <p class="feature-desc">Her alt sistem, iki ayrı görev için ayarlandı: rakip İHA'lara otonom kilitlenmenin yapıldığı Savaşan İHA görevi ve yerdeki QR kodların dalışla okunduğu Kamikaze görevi. Kaskad PID ve Model Öngörülü Kontrol (MPC) birlikte hassas manevrayı sağlar.</p>
           </div>
         </div>
       </div>
 
-      <!-- Slide 4 -->
+      <!-- Slayt 4 -->
       <div class="feature-slide">
         <div class="feature-slide-inner">
           <div class="feature-media">
-            <div class="feature-media-label">📷 Ground Station</div>
-            <img src="../assets/images/turcofighter-gcs.jpeg" alt="Ground control station"
+            <div class="feature-media-label">📷 Yer Kontrol İstasyonu</div>
+            <img src="../assets/images/turcofighter-gcs.jpeg" alt="Yer kontrol istasyonu"
               onerror="this.style.opacity='0'" />
             <div class="feature-media-placeholder">
               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              <span style="font-size:0.75rem;letter-spacing:0.1em;">Place image: assets/images/turcofighter-gcs.jpg</span>
+              <span style="font-size:0.75rem;letter-spacing:0.1em;">Görsel için: assets/images/turcofighter-gcs.jpg</span>
             </div>
           </div>
           <div class="feature-info">
-            <p class="feature-number">Feature 04 / 04</p>
-            <h3 class="feature-title">Ground Control &<br/>Mission Monitoring</h3>
-            <p class="feature-desc">A custom ground station tracks telemetry, battery state, and target-lock status live, giving the ground crew the situational awareness needed to make split-second calls during a competition run.</p>
+            <p class="feature-number">Özellik 04 / 04</p>
+            <h3 class="feature-title">Yer Kontrolü ve<br/>Görev İzleme</h3>
+            <p class="feature-desc">Mission Planner arayüzü, RFD900X telemetri ve Ubiquiti Rocket 5AC Lite görüntü hattı üzerinden anlık irtifa, hız ve kilitlenme durumunu ekibe ulaştırır; kendi geliştirdiğimiz görüntü arayüzü ise tespit doğruluğunu ve kilitlenme kutusunu canlı gösterir.</p>
           </div>
         </div>
       </div>
@@ -917,35 +917,35 @@
   </div>
 
   <div class="carousel-controls">
-    <button class="carousel-btn" id="prevBtn" aria-label="Previous">&#8592;</button>
+    <button class="carousel-btn" id="prevBtn" aria-label="Önceki">&#8592;</button>
     <div class="carousel-dots" id="carouselDots">
       <button class="carousel-dot active" data-index="0"></button>
       <button class="carousel-dot" data-index="1"></button>
       <button class="carousel-dot" data-index="2"></button>
       <button class="carousel-dot" data-index="3"></button>
     </div>
-    <button class="carousel-btn" id="nextBtn" aria-label="Next">&#8594;</button>
+    <button class="carousel-btn" id="nextBtn" aria-label="Sonraki">&#8594;</button>
   </div>
 </section>
 
 <!-- ================================================
-     SECTION 3 — DESIGN STATEMENT
+     BÖLÜM 3 — TASARIM FELSEFESİ
      ================================================ -->
 <section class="design-statement">
   <div class="container">
-    <p class="design-eyebrow reveal">Design</p>
+    <p class="design-eyebrow reveal">Tasarım</p>
     <h2 class="design-headline reveal">
-      A platform we didn't build.<br/><em>A system</em> we made ours.
+      İmal etmediğimiz bir gövde.<br/><em>Sahiplendiğimiz</em> bir sistem.
     </h2>
     <p class="design-desc reveal">
-      Turcofighter's EPO foam flying-wing airframe came off the shelf — but everything that flies it is ours. Custom autopilot firmware, a from-scratch vision pipeline, and a purpose-built neutralization module turned a hobby-grade platform into a competition machine.
+      Turco Fighter'ın EPO köpük uçan kanat gövdesi hazır alınmıştır — ancak onu uçuran her şey bize ait. Özel uçuş yazılımı, sıfırdan geliştirilen görüntü işleme hattı ve kaskad PID + MPC tabanlı kontrol sistemi, hazır bir platformu bir yarışma makinesine dönüştürdü.
     </p>
     <div class="design-drone-showcase reveal">
       <img
         src="../assets/images/turcofighter-design.jpg"
-        alt="Turcofighter design view"
+        alt="Turco Fighter tasarım görünümü"
         class="design-drone-img"
-        onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1929,#050a12);border-radius:12px;border:1px solid rgba(74,158,204,0.15);\'><p style=\'font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);\'>Place top-down design image: assets/images/turcofighter-design.png</p></div>'"
+        onerror="this.outerHTML='<div style=\'width:100%;aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#0a1929,#050a12);border-radius:12px;border:1px solid rgba(74,158,204,0.15);\'><p style=\'font-family:var(--font-display);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);\'>Üstten görünüm için: assets/images/turcofighter-design.png</p></div>'"
       />
       <div class="design-glow"></div>
     </div>
@@ -953,35 +953,35 @@
 </section>
 
 <!-- ================================================
-     SECTION 4 — SOFTWARE
+     BÖLÜM 4 — YAZILIM
      ================================================ -->
 <section class="software-section">
   <div class="container">
     <div class="software-grid">
       <div>
-        <p class="section-eyebrow reveal">Software</p>
+        <p class="section-eyebrow reveal">Yazılım</p>
         <h2 class="section-title reveal" style="margin-bottom:24px;">
-          The airframe was borrowed.<br/>The brain wasn't.
+          Gövde hazır alındı.<br/>Beyin bize ait.
         </h2>
         <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.8;margin-bottom:48px;" class="reveal">
-          Turcofighter runs a custom flight stack layered on top of an open autopilot core, with a dedicated companion-computer vision module handling target detection — every line of the mission logic is BFL'Y's own.
+          Turco Fighter, ArduPilot/PX4 tabanlı Pixhawk Cube Orange üzerinde çalışan özel görev mantığını, Jetson TX2 NX üzerindeki görüntü işleme modülüyle birleştirir. Hedef seçimi, takip ve kilitlenme algoritmalarının tamamı BFL'Y tarafından geliştirilmiştir.
         </p>
         <div class="sw-modules reveal">
           <div class="sw-module">
-            <p class="sw-module-name">Flight Stack</p>
-            <p class="sw-module-desc">Custom mission logic layered over the base autopilot firmware</p>
+            <p class="sw-module-name">Uçuş Yazılımı</p>
+            <p class="sw-module-desc">Mission Planner ve ArduPilot altyapısı üzerine kurulu özel görev mantığı</p>
           </div>
           <div class="sw-module">
-            <p class="sw-module-name">Target Tracker</p>
-            <p class="sw-module-desc">Onboard image processing for real-time target detection</p>
+            <p class="sw-module-name">Hedef Takip</p>
+            <p class="sw-module-desc">YOLOv5s + Genişletilmiş Kalman Filtresi (EKF) ile gerçek zamanlı tespit</p>
           </div>
           <div class="sw-module">
-            <p class="sw-module-name">Engagement Logic</p>
-            <p class="sw-module-desc">Rule-compliant approach and neutralization sequencing</p>
+            <p class="sw-module-name">Kilitlenme Mantığı</p>
+            <p class="sw-module-desc">Çok katmanlı Hedef Öncelik Değeri (HÖD) modeli ve kaskad PID + MPC kontrolü</p>
           </div>
           <div class="sw-module">
-            <p class="sw-module-name">Telemetry</p>
-            <p class="sw-module-desc">Live data link to the ground control station</p>
+            <p class="sw-module-name">Telemetri</p>
+            <p class="sw-module-desc">RFD900X üzerinden MAVLink protokolüyle yer istasyonuna canlı veri hattı</p>
           </div>
         </div>
       </div>
@@ -991,26 +991,26 @@
           <div class="code-glow"></div>
           <div class="sw-bar">
             <div class="sw-dot"></div><div class="sw-dot"></div><div class="sw-dot"></div>
-            <span class="sw-filename">target_tracker.py</span>
+            <span class="sw-filename">hedef_takip.py</span>
           </div>
-          <pre class="sw-code"><span class="sw-comment"># Turcofighter Target Tracker — BFL'Y SUAS</span>
+          <pre class="sw-code"><span class="sw-comment"># Turco Fighter Hedef Takip Modülü — BFL'Y Savaşan İHA</span>
 <span class="sw-keyword">import</span> <span class="sw-accent">cv2</span>
-<span class="sw-keyword">from</span> <span class="sw-accent">flight</span> <span class="sw-keyword">import</span> <span class="sw-func">Autopilot</span>
+<span class="sw-keyword">from</span> <span class="sw-accent">ucus</span> <span class="sw-keyword">import</span> <span class="sw-func">Otopilot</span>
 
-<span class="sw-keyword">class</span> <span class="sw-func">TargetTracker</span>:
-  <span class="sw-keyword">def</span> <span class="sw-func">__init__</span>(<span class="sw-var">self</span>, config):
-    <span class="sw-var">self</span>.cam   = cv2.<span class="sw-func">VideoCapture</span>(<span class="sw-number">0</span>)
-    <span class="sw-var">self</span>.pilot = <span class="sw-func">Autopilot</span>(config)
+<span class="sw-keyword">class</span> <span class="sw-func">HedefTakip</span>:
+  <span class="sw-keyword">def</span> <span class="sw-func">__init__</span>(<span class="sw-var">self</span>, ayarlar):
+    <span class="sw-var">self</span>.kamera = cv2.<span class="sw-func">VideoCapture</span>(<span class="sw-number">0</span>)
+    <span class="sw-var">self</span>.pilot  = <span class="sw-func">Otopilot</span>(ayarlar)
 
-  <span class="sw-keyword">def</span> <span class="sw-func">track</span>(<span class="sw-var">self</span>):
-    ok, frame = <span class="sw-var">self</span>.cam.<span class="sw-func">read</span>()
+  <span class="sw-keyword">def</span> <span class="sw-func">takip_et</span>(<span class="sw-var">self</span>):
+    ok, kare = <span class="sw-var">self</span>.kamera.<span class="sw-func">read</span>()
     <span class="sw-keyword">if</span> <span class="sw-keyword">not</span> ok: <span class="sw-keyword">return</span> <span class="sw-keyword">None</span>
 
-    target = <span class="sw-var">self</span>.<span class="sw-func">detect</span>(frame)
-    <span class="sw-keyword">if</span> target:
-      heading = <span class="sw-var">self</span>.<span class="sw-func">bearing_to</span>(target)
-      <span class="sw-var">self</span>.pilot.<span class="sw-func">steer</span>(heading)
-    <span class="sw-keyword">return</span> target<span class="sw-cursor"></span></pre>
+    hedef = <span class="sw-var">self</span>.<span class="sw-func">tespit_et</span>(kare)
+    <span class="sw-keyword">if</span> hedef:
+      yonelim = <span class="sw-var">self</span>.<span class="sw-func">acisal_konum</span>(hedef)
+      <span class="sw-var">self</span>.pilot.<span class="sw-func">yonlendir</span>(yonelim)
+    <span class="sw-keyword">return</span> hedef<span class="sw-cursor"></span></pre>
         </div>
       </div>
     </div>
@@ -1018,64 +1018,64 @@
 </section>
 
 <!-- ================================================
-     SECTION 5 — CLOSE LOOK (Accordion + Image)
+     BÖLÜM 5 — YAKIN İNCELEME (Akordeon + Görsel)
      ================================================ -->
 <section class="close-look">
   <div class="container">
     <div class="close-look-header reveal">
-      <p class="section-eyebrow">Details</p>
-      <h2 class="section-title">A closer look.</h2>
+      <p class="section-eyebrow">Ayrıntılar</p>
+      <h2 class="section-title">Daha Yakından.</h2>
     </div>
     <div class="close-look-grid">
       <div class="accordion-list" id="accordionList">
 
         <div class="accordion-item">
-          <button class="accordion-trigger active" data-image="turcofighter-detail-airframe.jpg" data-label="EPO Airframe">
+          <button class="accordion-trigger active" data-image="turcofighter-detail-airframe.jpg" data-label="EPO Gövde">
             <span class="accordion-icon">+</span>
-            <span class="accordion-label">EPO Foam Flying-Wing Airframe</span>
+            <span class="accordion-label">EPO Köpük Uçan Kanat Gövde</span>
           </button>
           <div class="accordion-body open">
-            <p>Turcofighter's Talon-style EPO foam flying-wing spans 1718 mm and comes reinforced with carbon-fiber spars. Its swept, tailless shape gives it excellent glide efficiency and forgiving low-speed handling — ideal for a first competition airframe.</p>
+            <p>Turco Fighter'ın TALON EPO FPV 1718 mm ARF gövdesi hazır olarak Türk Hava Kurumu üzerinden temin edilmiştir. Ana malzemesi EPO köpük olup bazı kısımlarda tahta destekler kullanılmıştır; kanatlar gövdeye karbon fiber çubuklarla, ön kısım ise kameranın görüş alabilmesi için şeffaf malzemeyle bağlanmıştır.</p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-trigger" data-image="turcofighter-detail-propulsion.jpg" data-label="Pusher Propulsion">
+          <button class="accordion-trigger" data-image="turcofighter-detail-propulsion.jpg" data-label="İtici Motor">
             <span class="accordion-icon">+</span>
-            <span class="accordion-label">Pusher Propulsion</span>
+            <span class="accordion-label">İtici (Pusher) Konfigürasyon</span>
           </button>
           <div class="accordion-body">
-            <p>A rear-mounted 950KV brushless motor spinning a 10x6 propeller sits clear of the vision system's field of view, delivering enough thrust for a stable 65 km/h cruise while keeping the nose free for the camera payload.</p>
+            <p>Arkaya monte edilmiş SunnySky X3520 V3 780KV fırçasız motor, 13x6,5" Gemfan cam elyaf pervane ile birlikte tam dolu 4S bataryada yaklaşık 3850 gram itki üretir. Sabit uçuş için hesaplanan minimum itki ihtiyacı 182,4 gram olup, agresif manevralar için 2100-2400 gram itki payı öngörülmüştür.</p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-trigger" data-image="turcofighter-detail-avionics.jpg" data-label="Avionics Integration">
+          <button class="accordion-trigger" data-image="turcofighter-detail-avionics.jpg" data-label="Aviyonik Entegrasyonu">
             <span class="accordion-icon">+</span>
-            <span class="accordion-label">Custom Avionics Integration</span>
+            <span class="accordion-label">Özel Aviyonik Entegrasyonu</span>
           </button>
           <div class="accordion-body">
-            <p>An open-source flight controller runs BFL'Y-authored mission firmware, paired with a companion computer dedicated entirely to real-time image processing — the two communicate over a lightweight serial link tuned for low latency.</p>
+            <p>ARM Cortex-M7 tabanlı Pixhawk Cube Orange, çift IMU ve barometre ile gelişmiş sensör füzyonu sağlar; Jetson TX2 NX görev bilgisayarına UART/Ethernet üzerinden bağlanır. Konum bilgisi için RTK destekli Pixhawk Here 4 GPS, engel algılama için TFmini Plus LIDAR (±2 cm hassasiyet) kullanılır.</p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-trigger" data-image="turcofighter-detail-detection.jpg" data-label="Target Detection">
+          <button class="accordion-trigger" data-image="turcofighter-detail-detection.jpg" data-label="Hedef Tespiti">
             <span class="accordion-icon">+</span>
-            <span class="accordion-label">Vision-Based Target Detection</span>
+            <span class="accordion-label">Görüntü Tabanlı Hedef Tespiti</span>
           </button>
           <div class="accordion-body">
-            <p>A forward-facing camera and onboard classifier identify competition targets against cluttered backgrounds, feeding bearing data straight into the flight stack so Turcofighter can adjust its approach without ground input.</p>
+            <p>Raspberry Pi HQ Kamera (12,3 MP Sony IMX477) ile alınan görüntüler, yaklaşık 15.000 görüntüye zenginleştirilmiş özel veri setiyle eğitilen YOLOv5s modelinden geçer. Testlerde iki hedefin %95,2 doğruluk ve 0,937 ortalama güven skoruyla tespit edildiği ölçülmüştür.</p>
           </div>
         </div>
 
         <div class="accordion-item">
-          <button class="accordion-trigger" data-image="turcofighter-detail-battery.jpg" data-label="Power System">
+          <button class="accordion-trigger" data-image="turcofighter-detail-battery.jpg" data-label="Güç Sistemi">
             <span class="accordion-icon">+</span>
-            <span class="accordion-label">Power System</span>
+            <span class="accordion-label">Güç Sistemi</span>
           </button>
           <div class="accordion-body">
-            <p>A 4S 5000 mAh LiPo pack powers the motor, avionics, and vision computer independently through a dedicated BEC, giving Turcofighter roughly 25 minutes of mission time per flight.</p>
+            <p>Tattu 4S 10000 mAh 25C LiPo batarya, motor, aviyonik ve görev bilgisayarını beslerken 150A devre kesici sigortayla korunur. Hesaplanan toplam güç tüketimi 497,1 W olup, buna göre uçuş süresi yaklaşık 20 dakika, pilota ekstra güvenlik payı bırakacak şekilde belirlenmiştir.</p>
           </div>
         </div>
 
@@ -1084,8 +1084,8 @@
       <div class="close-look-image-wrap" id="clImageWrap">
         <div class="cl-placeholder" id="clPlaceholder">
           <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-          <span class="cl-placeholder-label" id="clLabel">EPO Airframe</span>
-          <span style="font-size:0.72rem;color:var(--text-muted);text-align:center;padding:0 24px;">Place detail images in assets/images/turcofighter-detail-*.jpg</span>
+          <span class="cl-placeholder-label" id="clLabel">EPO Gövde</span>
+          <span style="font-size:0.72rem;color:var(--text-muted);text-align:center;padding:0 24px;">Detay görsellerini assets/images/turcofighter-detail-*.jpg konumuna yerleştirin</span>
         </div>
         <img src="" alt="" class="cl-image" id="clImage" style="display:none;" />
       </div>
@@ -1094,23 +1094,23 @@
 </section>
 
 <!-- ================================================
-     SECTION 6 — GENERAL OVERVIEW
+     BÖLÜM 6 — GENEL BİLGİ
      ================================================ -->
 <section class="general-overview">
   <div class="container">
     <div class="overview-inner reveal">
-      <div class="overview-rotated-label">General Info</div>
+      <div class="overview-rotated-label">Genel Bilgi</div>
       <div class="overview-content">
         <h2 class="overview-title">
-          <span>Baykar Fen Lisesi SUAS</span>
+          <span>Baykar Fen Lisesi'Y Takımı</span>
           TURCO<br/>FIGHTER
         </h2>
         <div class="overview-text">
           <p>
-            Turcofighter was BFL'Y's first step into fixed-wing aviation and the team's competition debut. Rather than manufacturing an airframe from scratch, the team took a ready-made Talon EPO flying-wing kit and poured its effort into integration: a custom autopilot stack, an onboard vision system, and a target-neutralization module all built in-house.
+            Turco Fighter, BFL'Y'nin sabit kanatlı havacılığa ilk adımı ve TEKNOFEST'teki ilk yarışma projesidir. Ekip, Baykar Milli Teknoloji MTAL öğrencilerinden oluşmakta olup "AF-Tech Savaşan İHA" adıyla TEKNOFEST Savaşan İHA 2025 yarışmasına başvurmuştur. Sıfırdan bir gövde imal etmek yerine hazır TALON EPO uçan kanat kitini temel alan takım, tüm emeğini entegrasyona verdi: Pixhawk Cube Orange üzerinde özel bir uçuş yazılımı, Jetson TX2 NX üzerinde çalışan bir görüntü işleme sistemi ve tamamen kendi geliştirdiği kilitlenme ile QR-kod okuma algoritmaları.
           </p>
           <p>
-            Entered into TEKNOFEST Savaşan İHA, the competitive Combat UAV category, Turcofighter delivered the team's first real result against established university teams — reaching the semifinals as the only high-school team in the category that year. The experience of integrating complex systems onto an off-the-shelf platform directly shaped the decision to design our next aircraft, X, entirely from scratch.
+            Sistem, rakip İHA'ları GPS ve görüntü verisiyle tespit edip kilitlenen "Otonom Kilitlenme" görevini ve yerdeki QR kodların dalışla okunduğu "Kamikaze" görevini yerine getirecek şekilde tasarlandı. Aracın ilk uçuş denemesi başarıyla tamamlandı; yarışma tarihine kadar manevra kabiliyeti, azami uçuş süresi, otonom iniş-kalkış ve hava savunma sisteminden kaçış gibi kapsamlı saha testleri planlanmaktadır. Bu hazır platform üzerindeki entegrasyon deneyimi, ekibin bir sonraki aracını sıfırdan tasarlama kararını doğrudan şekillendirdi.
           </p>
         </div>
       </div>
@@ -1119,27 +1119,27 @@
 </section>
 
 <!-- ================================================
-     SECTION 7 — SCROLL-SYNCED ZOOM
+     BÖLÜM 7 — KAYDIRMA İLE YAKINLAŞMA
      ================================================ -->
 <section class="scroll-3d-section" id="scroll3dSection">
   <div class="scroll-3d-sticky">
     <div class="scroll-3d-inner">
       <div class="scroll-3d-info">
-        <p class="section-eyebrow">In Detail</p>
-        <h2 class="scroll-3d-title">See every<br/>angle.</h2>
-        <p class="scroll-3d-desc">Scroll to move in on Turcofighter — from the full flying-wing silhouette down to the avionics bay.</p>
+        <p class="section-eyebrow">Ayrıntıda</p>
+        <h2 class="scroll-3d-title">Her açıdan<br/>inceleyin.</h2>
+        <p class="scroll-3d-desc">Turco Fighter'a yakınlaşmak için kaydırın — tam uçan kanat silüetinden aviyonik bölmesine kadar.</p>
         <div class="scroll-3d-steps">
           <div class="scroll-step active" data-step="0">
             <span class="scroll-step-num">01</span>
-            <p>Full airframe — flying-wing silhouette and overall proportions</p>
+            <p>Tam gövde — uçan kanat silüeti ve genel oranlar</p>
           </div>
           <div class="scroll-step" data-step="1">
             <span class="scroll-step-num">02</span>
-            <p>Mid approach — wing structure and pusher motor mount visible</p>
+            <p>Orta mesafe — kanat yapısı ve itici motor bağlantısı görünür</p>
           </div>
           <div class="scroll-step" data-step="2">
             <span class="scroll-step-num">03</span>
-            <p>Close detail — avionics bay and forward-facing camera module</p>
+            <p>Yakın detay — aviyonik bölmesi ve ön kamera modülü</p>
           </div>
         </div>
       </div>
@@ -1148,7 +1148,7 @@
         <div class="drone-3d-wrap">
           <img
             src="../assets/images/turcofighter-3d.png"
-            alt="Turcofighter zoom view"
+            alt="Turco Fighter yakınlaştırma görünümü"
             class="drone-3d-img"
             id="drone3dImg"
             onerror="this.style.opacity='0.3'"
@@ -1163,73 +1163,73 @@
 </section>
 
 <!-- ================================================
-     SECTION 8 — COMPETITION TIMELINE
+     BÖLÜM 8 — YARIŞMA TAKVİMİ
      ================================================ -->
 <section class="timeline-section">
   <div class="container">
     <div class="timeline-header">
-      <p class="section-eyebrow reveal">Season</p>
-      <h2 class="section-title reveal">Competition Roadmap</h2>
+      <p class="section-eyebrow reveal">Sezon</p>
+      <h2 class="section-title reveal">Yarışma Yol Haritası</h2>
     </div>
     <div class="timeline-track reveal">
 
       <div class="tl-item">
         <div class="tl-left">
-          <p class="tl-phase done">Done</p>
-          <p class="tl-title-text">Airframe Procurement</p>
-          <p class="tl-desc">Talon EPO flying-wing kit selected and acquired as the team's first competition platform.</p>
+          <p class="tl-phase done">Tamamlandı</p>
+          <p class="tl-title-text">Takım Kuruluşu ve Görev Dağılımı</p>
+          <p class="tl-desc">AF-Tech Savaşan İHA takımı 2024 yılında kuruldu; yönetim, yazılım, aviyonik, mekanik, haberleşme ve tasarım birimleri oluşturuldu.</p>
         </div>
-        <div class="tl-node done">KIT</div>
+        <div class="tl-node done">TKM</div>
         <div></div>
       </div>
 
       <div class="tl-item">
         <div></div>
-        <div class="tl-node done">INT</div>
+        <div class="tl-node done">KAT</div>
         <div class="tl-right">
-          <p class="tl-phase done">Done</p>
-          <p class="tl-title-text">Avionics Integration</p>
-          <p class="tl-desc">Autopilot, telemetry, and companion vision computer wired and configured inside the airframe.</p>
+          <p class="tl-phase done">Tamamlandı</p>
+          <p class="tl-title-text">Kavramsal Tasarım ve Yol Haritası</p>
+          <p class="tl-desc">TALON EPO gövdesinin seçimi, alt sistem mimarisi ve proje zaman çizelgesi belirlendi.</p>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-left">
-          <p class="tl-phase done">Done</p>
-          <p class="tl-title-text">First Flight</p>
-          <p class="tl-desc">Turcofighter's maiden flight, validating basic stability and manual control handling.</p>
+          <p class="tl-phase done">Tamamlandı</p>
+          <p class="tl-title-text">Teknik Yeterlilik Formu</p>
+          <p class="tl-desc">Aracın ilk teknik doküman seti hazırlanarak yarışma organizasyonuna sunuldu.</p>
         </div>
-        <div class="tl-node done">FF</div>
+        <div class="tl-node done">TYF</div>
         <div></div>
       </div>
 
       <div class="tl-item">
         <div></div>
-        <div class="tl-node done">APP</div>
+        <div class="tl-node done">KTR</div>
         <div class="tl-right">
-          <p class="tl-phase done">Done</p>
-          <p class="tl-title-text">TEKNOFEST Application</p>
-          <p class="tl-desc">Official entry submitted to the TEKNOFEST Savaşan İHA (Combat UAV) competition.</p>
+          <p class="tl-phase done">Tamamlandı</p>
+          <p class="tl-title-text">Kritik Tasarım Raporu</p>
+          <p class="tl-desc">Sistem mimarisi, otonom görev algoritmaları ve test planı detaylandırılarak TEKNOFEST'e sunuldu.</p>
         </div>
       </div>
 
       <div class="tl-item">
         <div class="tl-left">
-          <p class="tl-phase done">Done</p>
-          <p class="tl-title-text">Elimination Round</p>
-          <p class="tl-desc">Turcofighter cleared the qualification stage against established university teams.</p>
+          <p class="tl-phase">Devam Ediyor</p>
+          <p class="tl-title-text">Uçuş ve Görev Testleri</p>
+          <p class="tl-desc">İlk uçuş denemesi yapıldı; manevra kabiliyeti, azami uçuş süresi, otonom iniş-kalkış ve hava savunmasından kaçış testleri planlanıyor.</p>
         </div>
-        <div class="tl-node done">ELM</div>
+        <div class="tl-node">UT</div>
         <div></div>
       </div>
 
       <div class="tl-item">
         <div></div>
-        <div class="tl-node done">SF</div>
+        <div class="tl-node">TF</div>
         <div class="tl-right">
-          <p class="tl-phase done">Done</p>
-          <p class="tl-title-text">Semifinal Result</p>
-          <p class="tl-desc">Reached the semifinals of TEKNOFEST Savaşan İHA — the only high-school team to do so that year.</p>
+          <p class="tl-phase">Planlanan</p>
+          <p class="tl-title-text">TEKNOFEST Savaşan İHA Yarışması</p>
+          <p class="tl-desc">Turco Fighter, otonom kilitlenme ve kamikaze QR-kod görevleriyle yarışma sahasında yerini alacak.</p>
         </div>
       </div>
 
@@ -1238,64 +1238,64 @@
 </section>
 
 <!-- ================================================
-     SECTION 9 — TECHNICAL SPECS
+     BÖLÜM 9 — TEKNİK ÖZELLİKLER
      ================================================ -->
 <section class="specs-section">
   <div class="container">
     <div class="specs-header">
-      <p class="section-eyebrow reveal">Specifications</p>
-      <h2 class="section-title reveal">Technical Data</h2>
+      <p class="section-eyebrow reveal">Teknik Özellikler</p>
+      <h2 class="section-title reveal">Teknik Veriler</h2>
     </div>
     <div class="specs-grid reveal">
       <div class="specs-category">
-        <p class="specs-cat-title">Airframe</p>
-        <div class="spec-row"><span class="spec-key">Type</span><span class="spec-val">EPO Flying Wing</span></div>
-        <div class="spec-row"><span class="spec-key">Wingspan</span><span class="spec-val">1718 mm</span></div>
-        <div class="spec-row"><span class="spec-key">Length</span><span class="spec-val">745 mm</span></div>
-        <div class="spec-row"><span class="spec-key">Empty Weight</span><span class="spec-val">~1.6 kg</span></div>
-        <div class="spec-row"><span class="spec-key">MTOW</span><span class="spec-val">3.4 kg</span></div>
+        <p class="specs-cat-title">Gövde</p>
+        <div class="spec-row"><span class="spec-key">Tip</span><span class="spec-val">EPO Uçan Kanat (Hazır Gövde)</span></div>
+        <div class="spec-row"><span class="spec-key">Model</span><span class="spec-val">TALON EPO FPV 1718mm ARF</span></div>
+        <div class="spec-row"><span class="spec-key">Kanat Açıklığı</span><span class="spec-val">1718 mm</span></div>
+        <div class="spec-row"><span class="spec-key">Uzunluk</span><span class="spec-val">1100 mm</span></div>
+        <div class="spec-row"><span class="spec-key">Ağırlık (Nihai)</span><span class="spec-val">3500 gr</span></div>
       </div>
       <div class="specs-category">
-        <p class="specs-cat-title">Performance</p>
-        <div class="spec-row"><span class="spec-key">Cruise Speed</span><span class="spec-val">65 km/h</span></div>
-        <div class="spec-row"><span class="spec-key">Flight Endurance</span><span class="spec-val">25 min</span></div>
-        <div class="spec-row"><span class="spec-key">Stall Speed</span><span class="spec-val">28 km/h</span></div>
-        <div class="spec-row"><span class="spec-key">Service Ceiling</span><span class="spec-val">400 m AGL</span></div>
-        <div class="spec-row"><span class="spec-key">Result</span><span class="spec-val">Semifinal — Savaşan İHA</span></div>
+        <p class="specs-cat-title">Performans</p>
+        <div class="spec-row"><span class="spec-key">Kanat Profili</span><span class="spec-val">E205 (CL/CD ≈ 19)</span></div>
+        <div class="spec-row"><span class="spec-key">Tutunma Hızı</span><span class="spec-val">12 m/s</span></div>
+        <div class="spec-row"><span class="spec-key">İrtifa Aralığı</span><span class="spec-val">45–90 m</span></div>
+        <div class="spec-row"><span class="spec-key">Hesaplanan Uçuş Süresi</span><span class="spec-val">~20 dakika</span></div>
+        <div class="spec-row"><span class="spec-key">Azami Haberleşme Menzili</span><span class="spec-val">35 km</span></div>
       </div>
       <div class="specs-category">
-        <p class="specs-cat-title">Propulsion</p>
-        <div class="spec-row"><span class="spec-key">Motor</span><span class="spec-val">Brushless 950KV</span></div>
-        <div class="spec-row"><span class="spec-key">ESC</span><span class="spec-val">40A</span></div>
-        <div class="spec-row"><span class="spec-key">Propeller</span><span class="spec-val">10x6 Pusher</span></div>
-        <div class="spec-row"><span class="spec-key">Battery</span><span class="spec-val">4S 5000 mAh LiPo</span></div>
-        <div class="spec-row"><span class="spec-key">Configuration</span><span class="spec-val">Rear-Mounted Pusher</span></div>
+        <p class="specs-cat-title">İtki Sistemi</p>
+        <div class="spec-row"><span class="spec-key">Motor</span><span class="spec-val">SunnySky X3520 V3 780KV</span></div>
+        <div class="spec-row"><span class="spec-key">ESC</span><span class="spec-val">HobbyWing Skywalker 80A</span></div>
+        <div class="spec-row"><span class="spec-key">Pervane</span><span class="spec-val">Gemfan Cam Elyaf APC 13x6,5"</span></div>
+        <div class="spec-row"><span class="spec-key">Batarya</span><span class="spec-val">Tattu 4S 10000mAh 25C LiPo</span></div>
+        <div class="spec-row"><span class="spec-key">Konfigürasyon</span><span class="spec-val">Arkaya Monte İtici (Pusher)</span></div>
       </div>
       <div class="specs-category">
-        <p class="specs-cat-title">Avionics & Comms</p>
-        <div class="spec-row"><span class="spec-key">Flight Controller</span><span class="spec-val">Open-Source FC, Custom Firmware</span></div>
-        <div class="spec-row"><span class="spec-key">Companion Computer</span><span class="spec-val">Onboard Vision Module</span></div>
-        <div class="spec-row"><span class="spec-key">Camera</span><span class="spec-val">Forward-Facing, Real-Time Detection</span></div>
-        <div class="spec-row"><span class="spec-key">Telemetry</span><span class="spec-val">915 MHz</span></div>
-        <div class="spec-row"><span class="spec-key">Control Link</span><span class="spec-val">2.4 GHz</span></div>
+        <p class="specs-cat-title">Aviyonik ve Haberleşme</p>
+        <div class="spec-row"><span class="spec-key">Uçuş Kontrolcüsü</span><span class="spec-val">Pixhawk Cube Orange</span></div>
+        <div class="spec-row"><span class="spec-key">Görev Bilgisayarı</span><span class="spec-val">NVIDIA Jetson TX2 NX</span></div>
+        <div class="spec-row"><span class="spec-key">Kamera</span><span class="spec-val">Raspberry Pi HQ (12,3 MP)</span></div>
+        <div class="spec-row"><span class="spec-key">GPS</span><span class="spec-val">Pixhawk Here 4 (RTK Destekli)</span></div>
+        <div class="spec-row"><span class="spec-key">Telemetri</span><span class="spec-val">RFD900X (902–928 MHz)</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================================================
-     SECTION 10 — GALLERY & MEDIA
+     BÖLÜM 10 — GALERİ VE MEDYA
      ================================================ -->
 <section class="gallery-section">
   <div class="container">
     <div class="gallery-header">
-      <p class="section-eyebrow reveal">Gallery</p>
-      <h2 class="section-title reveal">Media</h2>
+      <p class="section-eyebrow reveal">Galeri</p>
+      <h2 class="section-title reveal">Medya</h2>
     </div>
     <div class="gallery-tabs reveal">
-      <button class="gallery-tab active" data-tab="all">All</button>
-      <button class="gallery-tab" data-tab="photos">Photos</button>
-      <button class="gallery-tab" data-tab="videos">Videos</button>
+      <button class="gallery-tab active" data-tab="all">Tümü</button>
+      <button class="gallery-tab" data-tab="photos">Fotoğraflar</button>
+      <button class="gallery-tab" data-tab="videos">Videolar</button>
     </div>
     <div class="gallery-grid reveal">
       <div class="gallery-item">
@@ -1303,45 +1303,45 @@
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/images/gallery-tf-1.jpg</span>
         </div>
-        <div class="gallery-item-label">First Flight</div>
+        <div class="gallery-item-label">İlk Uçuş Denemesi</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/videos/gallery-tf-2.mp4</span>
         </div>
-        <div class="gallery-item-label">Savaşan İHA Semifinal Run</div>
+        <div class="gallery-item-label">Otonom Algoritma Testi</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/images/gallery-tf-3.jpg</span>
         </div>
-        <div class="gallery-item-label">Avionics Integration</div>
+        <div class="gallery-item-label">Aviyonik Entegrasyonu</div>
       </div>
       <div class="gallery-item">
         <div class="gallery-placeholder">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           <span style="font-size:0.72rem;letter-spacing:0.08em;">assets/images/gallery-tf-4.jpg</span>
         </div>
-        <div class="gallery-item-label">Ground Crew, Competition Day</div>
+        <div class="gallery-item-label">Yer Ekibi, Test Günü</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================================================
-     BETWEEN VEHICLES NAV
+     ARAÇLAR ARASI GEÇİŞ
      ================================================ -->
-<nav class="vd-nav" aria-label="Between vehicles">
+<nav class="vd-nav" aria-label="Araçlar arası geçiş">
   <div class="container">
     <div class="vd-nav-inner">
       <a href="../pages/vehicle.html" class="vd-nav-link">
-        <span class="vd-nav-hint">← Back to</span>
-        <span class="vd-nav-name">All Vehicles</span>
+        <span class="vd-nav-hint">← Geri dön</span>
+        <span class="vd-nav-name">Tüm Araçlar</span>
       </a>
       <a href="vehicle-x.html" class="vd-nav-link next">
-        <span class="vd-nav-hint">Next →</span>
+        <span class="vd-nav-hint">Sonraki →</span>
         <span class="vd-nav-name">X</span>
       </a>
     </div>
@@ -1349,23 +1349,23 @@
 </nav>
 
 <!-- ================================================
-     MISSION BADGE (CTA)
+     GÖREV ROZETİ (CTA)
      ================================================ -->
 <section class="mission-section">
   <div class="container">
     <div class="mission-badge reveal">
       <span class="mission-badge-dot"></span>
-      <span class="mission-badge-text">Status — Retired · 2024/25 Season</span>
+      <span class="mission-badge-text">Durum — 2025 Sezonu · TEKNOFEST'e Hazırlanıyor</span>
     </div>
     <h2 class="mission-headline reveal">
-      Our first competition.<br/>Our biggest step.
+      İlk yarışmamız.<br/>En büyük adımımız.
     </h2>
     <p class="mission-desc reveal">
-      Turcofighter took BFL'Y from the classroom to the competition floor, reaching the semifinals of TEKNOFEST Savaşan İHA. Every lesson from it shaped what came next.
+      Turco Fighter, BFL'Y'yi sınıftan yarışma pistine taşıyan ilk sabit kanatlı projemiz. Hazır bir gövde üzerine kurulan bu entegrasyon deneyiminin her aşaması, bundan sonra tasarlayacağımız araçları şekillendiriyor.
     </p>
     <div class="mission-cta reveal">
-      <a href="../pages/team.html" class="btn btn-primary">Meet the Team ↗</a>
-      <a href="../pages/gallery.html" class="btn btn-ghost">View Gallery</a>
+      <a href="../pages/team.html" class="btn btn-primary">Takımla Tanışın ↗</a>
+      <a href="../pages/gallery.html" class="btn btn-ghost">Galeriyi Gör</a>
     </div>
   </div>
 </section>
@@ -1377,15 +1377,15 @@
   <div class="footer-container">
     <div class="footer-left">
       <span class="logo-text" style="font-family:var(--font-display);font-size:1.1rem;font-weight:800;letter-spacing:0.05em;">BFL<span class="logo-accent">'Y</span></span>
-      <p>Baykar Science High School SUAS Team</p>
+      <p>Baykar Milli Teknoloji MTAL Savaşan İHA Takımı</p>
     </div>
     <div class="footer-right">
-      <p>Contact</p>
+      <p>İletişim</p>
       <a href="mailto:bfly@baykarfenlisesi.com" class="footer-link">bfly@baykarfenlisesi.com</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 BFL'Y SUAS Team — Baykar Fen Lisesi. All rights reserved.</p>
+    <p>© 2025 BFL'Y Savaşan İHA Takımı — Baykar Milli Teknoloji MTAL. Tüm hakları saklıdır.</p>
   </div>
 </footer>
 
@@ -1393,7 +1393,7 @@
      SCRIPTS
      ================================================ -->
 <script>
-  /* ---- Hotspots ---- */
+  /* ---- Hotspot'lar ---- */
   document.querySelectorAll('.hotspot').forEach(hs => {
     const tip = hs.querySelector('.hotspot-tooltip');
     tip.innerHTML = hs.dataset.tip || '';
@@ -1402,7 +1402,7 @@
     hs.addEventListener('click', () => hs.classList.toggle('active'));
   });
 
-  /* ---- Features Carousel ---- */
+  /* ---- Öne Çıkanlar Carousel ---- */
   const track = document.getElementById('featuresTrack');
   const dots  = document.querySelectorAll('.carousel-dot');
   let current = 0;
@@ -1422,7 +1422,7 @@
   function resetAuto() { clearInterval(autoTimer); autoTimer = setInterval(() => goTo(current + 1), 5000); }
   resetAuto();
 
-  /* ---- Accordion ---- */
+  /* ---- Akordeon ---- */
   const clImage = document.getElementById('clImage');
   const clPlaceholder = document.getElementById('clPlaceholder');
   const clLabel = document.getElementById('clLabel');
@@ -1438,7 +1438,7 @@
         btn.classList.add('active');
         btn.nextElementSibling.classList.add('open');
       }
-      // Update right-side image
+      // Sağdaki görseli güncelle
       const src  = `../assets/images/${btn.dataset.image}`;
       const label = btn.dataset.label || '';
       clLabel.textContent = label;
@@ -1450,7 +1450,7 @@
     });
   });
 
-  /* ---- Scroll Zoom ---- */
+  /* ---- Kaydırmalı Yakınlaştırma ---- */
   const s3d      = document.getElementById('scroll3dSection');
   const img3d    = document.getElementById('drone3dImg');
   const progress = document.getElementById('droneProgress');
@@ -1473,13 +1473,13 @@
     steps.forEach((s, i) => s.classList.toggle('active', i === stepIndex));
   }, { passive: true });
 
-  /* ---- Reveal on scroll ---- */
+  /* ---- Kaydırınca beliren öğeler ---- */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  /* ---- Lang Toggle ---- */
+  /* ---- Dil Değiştirici ---- */
   document.getElementById('lang-en').addEventListener('click', () => {
     document.getElementById('lang-en').classList.add('active');
     document.getElementById('lang-tr').classList.remove('active');
@@ -1489,12 +1489,12 @@
     document.getElementById('lang-en').classList.remove('active');
   });
 
-  /* ---- Hamburger ---- */
+  /* ---- Hamburger Menü ---- */
   document.getElementById('hamburger').addEventListener('click', function() {
     this.classList.toggle('open');
   });
 
-  /* ---- Gallery tabs (visual only) ---- */
+  /* ---- Galeri sekmeleri (görsel amaçlı) ---- */
   document.querySelectorAll('.gallery-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));

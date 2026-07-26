@@ -15,16 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       /* sponsor cards */
       sp_baykar_tag:   'Manufacturing Support',
-      sp_baykar_desc:  "Baykar provides critical manufacturing support to BFL'Y, enabling the team to produce carbon fiber airframes and components with professional-grade resources.",
+      sp_baykar_desc:  "Baykar stands alongside BFL'Y throughout every stage of design and production, providing professional-grade manufacturing support for our carbon fiber airframes and components.",
 
-      sp_t3_tag:       'Strategic Partner',
-      sp_t3_desc:      "T3 Foundation supports BFL'Y as part of its mission to empower the next generation of Turkish engineers and technology leaders.",
+      sp_t3_tag:       'Financial · SUAS & Savaşan',
+      sp_t3_desc:      "T3 Foundation provided financial support for our SUAS and Teknofest Savaşan UAV competitions, backing BFL'Y as part of its mission to empower young Turkish engineers.",
 
       sp_skydagger_tag:  'Financial · Savaşan',
-      sp_skydagger_desc: 'Provided financial support for our Savaşan competition campaign.',
+      sp_skydagger_desc: "Skydagger provided financial support for our Teknofest Savaşan UAV competition campaign, helping BFL'Y compete at the highest level in the national arena.",
 
-      sp_345_tag:      'Financial Support',
-      sp_345_desc:     "3-4-5 Yayıncılık contributes financial support to BFL'Y's ongoing development and competition efforts.",
+      sp_345_tag:      'Financial · SUAS',
+      sp_345_desc:     "Üç Dört Beş Yayınları provided financial support for our SUAS competition efforts, contributing to BFL'Y's continued growth and engineering development.",
 
       /* cta */
       sp_cta_eyebrow: 'Partner With Us',
@@ -39,16 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
       sponsors_desc:    "BFL'Y, bize inanan kişi ve kuruluşlar sayesinde var olmaya devam ediyor. Teşekkürler.",
 
       sp_baykar_tag:   'Üretim Desteği',
-      sp_baykar_desc:  "Baykar, BFL'Y'ye kritik üretim desteği sağlayarak takımın profesyonel kaynaklarla karbon fiber gövde ve bileşen üretmesine olanak tanıyor.",
+      sp_baykar_desc:  "Baykar, tasarım ve üretimin her aşamasında BFL'Y'nin yanında yer alarak karbon fiber gövde ve bileşenlerimiz için profesyonel üretim desteği sağlıyor.",
 
-      sp_t3_tag:       'Stratejik Ortak',
-      sp_t3_desc:      "T3 Vakfı, Türk mühendis ve teknoloji liderlerinin bir sonraki neslini güçlendirme misyonu kapsamında BFL'Y'yi destekliyor.",
+      sp_t3_tag:       'Finansal · SUAS & Savaşan',
+      sp_t3_desc:      "T3 Vakfı, SUAS ve Teknofest Savaşan İHA yarışmaları kapsamında BFL'Y'ye maddi destek sağlayarak genç Türk mühendislerini güçlendirme misyonuna katkıda bulunuyor.",
 
       sp_skydagger_tag:  'Finansal · Savaşan',
-      sp_skydagger_desc: 'Savaşan yarışma kampanyamız için finansal destek sağladı.',
+      sp_skydagger_desc: "Skydagger, Teknofest Savaşan İHA yarışma kampanyamız için maddi destek sağlayarak BFL'Y'nin ulusal arenada en üst düzeyde yarışmasına katkıda bulundu.",
 
-      sp_345_tag:      'Finansal Destek',
-      sp_345_desc:     "3-4-5 Yayıncılık, BFL'Y'nin süregelen gelişim ve yarışma çalışmalarına finansal katkıda bulunuyor.",
+      sp_345_tag:      'Finansal · SUAS',
+      sp_345_desc:     "Üç Dört Beş Yayınları, SUAS yarışma çalışmalarımız için maddi destek sağlayarak BFL'Y'nin sürekli gelişimine ve mühendislik ilerleyişine katkıda bulunuyor.",
 
       sp_cta_eyebrow: 'Bizimle Ortak Olun',
       sp_cta_title:   'Sponsor Olun',
