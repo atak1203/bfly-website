@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title_tr: '13 Kişilik BFL\'Y Takımımız Kuruldu!',
       excerpt_en: 'Our team BFL\'Y was founded by 13 members who share big ideals. In its very first meeting, the team defined its vision and slogan. Our vision: to always aim higher and to develop innovative technologies. Our slogan: "From the Roots to the Skies..."',
       excerpt_tr: 'BFL\'Y takımımız, büyük idealler doğrultusunda 13 kişi olarak kuruldu. İlk toplantısında vizyonunu ve sloganını belirledi. Vizyonumuz: Her zaman daha iyisini hedefleyen ve yenilikçi teknolojiler üreten bir takım olmak. Sloganımız ise: "Köklerden Göklere..."',
-      image: '../assets/images/blog/1.jpeg',
+      image: '/assets/images/blog/1.jpeg',
       link: '#'
     },
     {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title_tr: 'Delifişek, Üçüncü Uçuş Denemesini Başarıyla Gerçekleştirdi',
       excerpt_en: 'Following its first two flight tests, Delifişek completed its third flight trial. In this attempt, the aircraft managed to fly autonomously for several minutes.',
       excerpt_tr: 'İlk iki uçuş denemesinin ardından Delifişek, üçüncü uçuş denemesini de gerçekleştirdi. Bu denemede araç, dakikalarca otonom uçmayı başardı.',
-      image: '../assets/images/blog/2.jpg',
+      image: '/assets/images/blog/2.jpg',
       link: '#'
     },
     {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title_tr: 'Delifişek İlk Uçuşunu Başarıyla Gerçekleştirdi!',
       excerpt_en: 'After months of production, Delifişek successfully completed its first flight. This flight became a great source of hope for us on our journey.',
       excerpt_tr: 'Aylar süren üretim sürecinin ardından Delifişek, ilk uçuşunu başarıyla gerçekleştirdi. Bu uçuş, yolculuğumuzda bizler için büyük bir umut kaynağı oldu.',
-      image: '../assets/images/blog/3.jpg',
+      image: '/assets/images/blog/3.jpg',
       link: '#'
     },
     {
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
       title_tr: 'Tüm Vize İşlemleri Tamamlandı',
       excerpt_en: 'Our team, preparing to travel to the United States for the SUAS competition, has successfully completed all visa procedures.',
       excerpt_tr: 'SUAS yarışması kapsamında Amerika\'ya gitmeye hazırlanan takımımız, vize işlemlerini başarıyla tamamladı.',
-      image: '../assets/images/blog/4.jpg',
+      image: '/assets/images/blog/4.jpg',
       link: '#'
     },
   ];

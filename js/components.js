@@ -3,32 +3,28 @@
    Shared Navbar · Page Hero · Footer · Lang
    ============================================= */
 
-const LOGO_PATH_ROOT  = 'assets/images/LogoButun.png';
-const LOGO_PATH_PAGES = '../assets/images/LogoButun.png';
-
-function isInPages() {
-  return window.location.pathname.includes('/pages/');
-}
-
-const logoSrc    = isInPages() ? LOGO_PATH_PAGES : LOGO_PATH_ROOT;
-const homeHref   = isInPages() ? '../index.html'  : 'index.html';
-const pagePrefix = isInPages() ? '' : 'pages/';
+/* Site kök dizinden itibaren mutlak path'ler kullanılıyor.
+   Bu sayede sayfa hangi klasör derinliğinde olursa olsun
+   (ör. /vehicle/delifisek/) linkler ve asset'ler her zaman doğru çözülür. */
+const logoSrc  = '/assets/images/LogoButun.png';
+const homeHref = '/';
 
 const NAV_LINKS = [
-  { href: `${homeHref}`,                key: 'nav_home',     label_en: 'Home',      label_tr: 'Ana Sayfa'  },
-  { href: `${pagePrefix}team.html`,     key: 'nav_team',     label_en: 'Team',      label_tr: 'Takım'      },
-  { href: `${pagePrefix}vehicle.html`,  key: 'nav_vehicle',  label_en: 'Vehicle',   label_tr: 'Araç'       },
-  { href: `${pagePrefix}blog.html`,     key: 'nav_blog',     label_en: 'Blog',      label_tr: 'Blog'       },
-  { href: `${pagePrefix}gallery.html`,  key: 'nav_gallery',  label_en: 'Gallery',   label_tr: 'Galeri'     },
-  { href: `${pagePrefix}sponsors.html`, key: 'nav_sponsors', label_en: 'Sponsors',  label_tr: 'Sponsorlar' },
-  { href: `${pagePrefix}contact.html`,  key: 'nav_contact',  label_en: 'Contact',   label_tr: 'İletişim'   },
+  { href: '/',          key: 'nav_home',     label_en: 'Home',      label_tr: 'Ana Sayfa'  },
+  { href: '/team/',     key: 'nav_team',     label_en: 'Team',      label_tr: 'Takım'      },
+  { href: '/vehicle/',  key: 'nav_vehicle',  label_en: 'Vehicle',   label_tr: 'Araç'       },
+  { href: '/blog/',     key: 'nav_blog',     label_en: 'Blog',      label_tr: 'Blog'       },
+  { href: '/gallery/',  key: 'nav_gallery',  label_en: 'Gallery',   label_tr: 'Galeri'     },
+  { href: '/sponsors/', key: 'nav_sponsors', label_en: 'Sponsors',  label_tr: 'Sponsorlar' },
+  { href: '/contact/',  key: 'nav_contact',  label_en: 'Contact',   label_tr: 'İletişim'   },
 ];
 
 function buildNavLinks() {
   return NAV_LINKS.map(l => {
     const current = window.location.pathname;
-    const isActive = (l.href.includes('index') && (current.endsWith('/') || current.endsWith('index.html')))
-      || (!l.href.includes('index') && current.includes(l.href.replace('../', '').replace('pages/', '')));
+    const isActive = l.href === '/'
+      ? (current === '/' || current === '/index.html')
+      : current.startsWith(l.href);
     return `<li><a href="${l.href}" class="nav-link ${isActive ? 'active' : ''}" data-i18n="${l.key}">${l.label_en}</a></li>`;
   }).join('');
 }

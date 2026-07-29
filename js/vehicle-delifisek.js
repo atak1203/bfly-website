@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const lang = window.BFLY_CURRENT_LANG || 'en';
       const label = lang === 'tr' ? btn.dataset.labelTr : btn.dataset.labelEn;
-      const src = `../assets/images/${btn.dataset.image}`;
+      const src = `/assets/images/${btn.dataset.image}`;
       clLabel.textContent = label || '';
       clImage.src = src; clImage.alt = label || ''; clImage.style.display = 'block';
       clImage.onerror = () => { clImage.style.display = 'none'; clPlaceholder.style.display = 'flex'; };
