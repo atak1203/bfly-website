@@ -178,11 +178,30 @@
   .team-intro-body { grid-template-columns: 1fr; gap: 40px; }
   .members-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
   .members-header { flex-direction: column; align-items: flex-start; }
+
+  /* Timeline: tek sütuna, sola yaslı hizaya geç */
   .timeline-spine { left: 16px; }
+  .timeline-event { flex-direction: row; }
   .timeline-event::before { left: 16px; }
-  .timeline-event::after { display: none; }
+  .timeline-event::after { display: none; content: none; }
   .timeline-event.left .timeline-card,
-  .timeline-event.right .timeline-card { width: calc(100% - 48px); margin-left: 48px; margin-right: 0; }
+  .timeline-event.right .timeline-card {
+    width: calc(100% - 48px);
+    max-width: calc(100% - 48px);
+    margin-left: 48px !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .timeline-event.left .timeline-card,
+  .timeline-event.right .timeline-card {
+    width: calc(100% - 36px);
+    max-width: calc(100% - 36px);
+    margin-left: 36px !important;
+  }
+  .timeline-spine { left: 12px; }
+  .timeline-event::before { left: 12px; }
 }
 @media (max-width: 600px) {
   .team-intro-stats { grid-template-columns: 1fr 1fr; }

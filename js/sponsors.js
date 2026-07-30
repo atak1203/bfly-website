@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sponsors_desc:    "BFL'Y exists because of the people and organizations who believed in us. Thank you.",
 
       /* sponsor cards */
+      sp_baykar_tier:  'Strategic Partner',
+      sp_tier_supporting: 'Supporting Sponsor',
       sp_baykar_tag:   'Manufacturing Support',
       sp_baykar_desc:  "Baykar stands alongside BFL'Y throughout every stage of design and production, providing professional-grade manufacturing support for our carbon fiber airframes and components.",
 
@@ -38,6 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       sponsors_accent:  'Sponsorlar',
       sponsors_desc:    "BFL'Y, bize inanan kişi ve kuruluşlar sayesinde var olmaya devam ediyor. Teşekkürler.",
 
+      sp_baykar_tier:  'Stratejik Ortak',
+      sp_tier_supporting: 'Destekleyen Sponsor',
       sp_baykar_tag:   'Üretim Desteği',
       sp_baykar_desc:  "Baykar, tasarım ve üretimin her aşamasında BFL'Y'nin yanında yer alarak karbon fiber gövde ve bileşenlerimiz için profesyonel üretim desteği sağlıyor.",
 
