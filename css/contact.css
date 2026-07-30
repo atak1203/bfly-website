@@ -101,7 +101,7 @@
 
 /* ---------- MAP ---------- */
 .map-wrapper {
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
   border: 1px solid var(--border-dim);
   margin-top: 4px;
@@ -136,7 +136,7 @@
 .contact-form-wrap {
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   padding: 40px;
   position: relative;
   overflow: hidden;
@@ -196,7 +196,7 @@
 .form-group textarea {
   background: var(--bg);
   border: 1px solid var(--border-dim);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   padding: 11px 14px;
   color: var(--text);
   font-family: var(--font-body);

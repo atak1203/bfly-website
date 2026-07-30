@@ -20,14 +20,15 @@
   gap: 28px;
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   padding: 32px;
   transition: border-color 0.25s ease, transform 0.25s var(--ease-out);
 }
 
 .sponsor-card:hover {
   border-color: var(--accent);
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 /* Logo area — kare kutu */
@@ -37,7 +38,7 @@
   height: 120px;
   background: var(--bg-dark);
   border: 1px solid var(--border-dim);
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +90,7 @@
 /* ---------- BECOME A SPONSOR CTA ---------- */
 .sponsor-cta-block {
   border: 1px solid var(--border-dim);
-  border-radius: 6px;
+  border-radius: var(--radius-md);
   background: var(--bg-card);
   padding: 48px;
   position: relative;

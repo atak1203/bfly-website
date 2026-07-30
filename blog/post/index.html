@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BFL'Y — Blog Post" />
+  <title id="post-tab-title">Blog — BFL'Y SUAS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/brand/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/brand/favicon-192.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="BFL'Y" />
+  <meta id="og-title" property="og:title" content="Blog — BFL'Y SUAS" />
+  <meta id="og-desc" property="og:description" content="Updates from the field." />
+  <meta property="og:image" content="/assets/images/brand/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+
+  <!-- Navbar & Footer → components.js tarafından inject edilir -->
+
+  <main class="post-detail">
+    <div class="post-detail-hero">
+      <div class="post-detail-hero-bg"></div>
+      <div class="post-detail-hero-grid"></div>
+      <div class="container post-detail-hero-content">
+        <a href="/blog/" class="post-detail-back" data-i18n="post_back">&larr; Back to Blog</a>
+        <div class="article-meta" id="post-meta"></div>
+        <h1 class="post-detail-title" id="post-title">Loading…</h1>
+      </div>
+    </div>
+
+    <div class="container post-detail-body">
+      <div class="post-detail-image-wrap" id="post-image-wrap"></div>
+      <div class="post-detail-content" id="post-content"></div>
+
+      <div class="post-detail-footer">
+        <a href="/blog/" class="btn btn-ghost" data-i18n="post_back_btn">&larr; All Posts</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/blog-data.js"></script>
+  <script src="/js/components.js"></script>
+  <script src="/js/blog-post.js"></script>
+</body>
+</html>

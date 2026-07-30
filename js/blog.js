@@ -33,71 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ===== NEWS DATA =====
-     Yeni haber eklemek için bu diziye nesne ekleyin.
-     Alanlar:
-       id         : benzersiz sayı
-       date_en    : "May 12, 2025"
-       date_tr    : "12 Mayıs 2025"
-       category_en: "Competition" | "Technical" | "Event" | "Announcement"
-       category_tr: "Yarışma" | "Teknik" | "Etkinlik" | "Duyuru"
-       featured   : true ise ana haber olur (en son true olan seçilir)
-       title_en   : İngilizce başlık
-       title_tr   : Türkçe başlık
-       excerpt_en : İngilizce kısa açıklama
-       excerpt_tr : Türkçe kısa açıklama
-       image      : görsel yolu veya renk kodu ("#1e3a63")
-       link       : detay sayfası (opsiyonel, şimdilik "#")
-  ===== */
-  const NEWS = [
-    {
-      id: 1,
-      date_en: 'October 16, 2025',     date_tr: '16 Ekim 2025',
-      category_en: 'Announcement',  category_tr: 'Duyuru',
-      featured: true,
-      title_en: 'Our 13-Person BFL\'Y Team Has Been Formed!',
-      title_tr: '13 Kişilik BFL\'Y Takımımız Kuruldu!',
-      excerpt_en: 'Our team BFL\'Y was founded by 13 members who share big ideals. In its very first meeting, the team defined its vision and slogan. Our vision: to always aim higher and to develop innovative technologies. Our slogan: "From the Roots to the Skies..."',
-      excerpt_tr: 'BFL\'Y takımımız, büyük idealler doğrultusunda 13 kişi olarak kuruldu. İlk toplantısında vizyonunu ve sloganını belirledi. Vizyonumuz: Her zaman daha iyisini hedefleyen ve yenilikçi teknolojiler üreten bir takım olmak. Sloganımız ise: "Köklerden Göklere..."',
-      image: '/assets/images/blog/1.jpeg',
-      link: '#'
-    },
-    {
-      id: 2,
-      date_en: 'July 3, 2026',   date_tr: '3 Temmuz 2026',
-      category_en: 'Event',    category_tr: 'Etkinlik',
-      featured: false,
-      title_en: 'Delifişek Successfully Completes Its Third Flight Test',
-      title_tr: 'Delifişek, Üçüncü Uçuş Denemesini Başarıyla Gerçekleştirdi',
-      excerpt_en: 'Following its first two flight tests, Delifişek completed its third flight trial. In this attempt, the aircraft managed to fly autonomously for several minutes.',
-      excerpt_tr: 'İlk iki uçuş denemesinin ardından Delifişek, üçüncü uçuş denemesini de gerçekleştirdi. Bu denemede araç, dakikalarca otonom uçmayı başardı.',
-      image: '/assets/images/blog/2.jpg',
-      link: '#'
-    },
-    {
-      id: 3,
-      date_en: 'June 25, 2026',   date_tr: '25 Haziran 2026',
-      category_en: 'Event',        category_tr: 'Etkinlik',
-      featured: false,
-      title_en: 'Delifişek Successfully Completes Its First Flight!',
-      title_tr: 'Delifişek İlk Uçuşunu Başarıyla Gerçekleştirdi!',
-      excerpt_en: 'After months of production, Delifişek successfully completed its first flight. This flight became a great source of hope for us on our journey.',
-      excerpt_tr: 'Aylar süren üretim sürecinin ardından Delifişek, ilk uçuşunu başarıyla gerçekleştirdi. Bu uçuş, yolculuğumuzda bizler için büyük bir umut kaynağı oldu.',
-      image: '/assets/images/blog/3.jpg',
-      link: '#'
-    },
-    {
-      id: 4,
-      date_en: 'June 24, 2026',    date_tr: '24 Haziran 2026',
-      category_en: 'Announcement', category_tr: 'Duyuru',
-      featured: false,
-      title_en: 'All Visa Procedures Completed',
-      title_tr: 'Tüm Vize İşlemleri Tamamlandı',
-      excerpt_en: 'Our team, preparing to travel to the United States for the SUAS competition, has successfully completed all visa procedures.',
-      excerpt_tr: 'SUAS yarışması kapsamında Amerika\'ya gitmeye hazırlanan takımımız, vize işlemlerini başarıyla tamamladı.',
-      image: '/assets/images/blog/4.jpg',
-      link: '#'
-    },
-  ];
+     Tek kaynak veri artık /js/blog-data.js içinde (window.BFLY_NEWS).
+     Yeni haber eklemek için o dosyayı düzenleyin. ===== */
+  const NEWS = window.BFLY_NEWS || [];
 
   /* ===== HELPERS ===== */
   const ArrowIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>`;

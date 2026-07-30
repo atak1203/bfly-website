@@ -11,6 +11,29 @@
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/brand/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/brand/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/brand/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/brand/favicon-192.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BFL'Y" />
+  <meta property="og:title" content="BFL'Y | Baykar Science High School SUAS Team" />
+  <meta property="og:description" content="BFL'Y — Baykar Fen Lisesi SUAS Competition Team" />
+  <meta property="og:image" content="/assets/images/brand/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://bfly.baykarfenlisesi.k12.tr/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BFL'Y | Baykar Science High School SUAS Team" />
+  <meta name="twitter:description" content="BFL'Y — Baykar Fen Lisesi SUAS Competition Team" />
+  <meta name="twitter:image" content="/assets/images/brand/og-image.jpg" />
 </head>
 <body>
 
@@ -27,11 +50,20 @@
       <div class="runway-line" aria-hidden="true">
         <div class="runway-track"></div>
       </div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        <span data-i18n="hero_badge">SUAS 2025–2026 · TEKNOFEST Combat UAV</span>
+      </div>
       <p class="hero-eyebrow" data-i18n="hero_eyebrow">Baykar Science High School</p>
       <h1 class="hero-title">
         <span class="hero-title-main">BFL<span class="accent">'Y</span></span>
         <span class="hero-title-sub" data-i18n="hero_subtitle">Grounded in roots,.<br>reaching for the sky</span>
       </h1>
+      <p class="hero-desc" data-i18n="hero_desc">A student engineering team designing, manufacturing, and flying fully autonomous fixed-wing UAVs — competing against university teams from around the world.</p>
+      <div class="hero-cta">
+        <a href="/vehicle/" class="btn btn-primary" data-i18n="hero_cta_primary">View Our Aircraft</a>
+        <a href="/team/" class="btn btn-ghost" data-i18n="hero_cta_secondary">Meet the Team</a>
+      </div>
     </div>
 
     <div class="scroll-indicator" aria-hidden="true">
@@ -43,18 +75,23 @@
   <section class="stats-strip" aria-label="Key stats">
     <div class="stats-container">
       <div class="stat-item">
-        <span class="stat-number">2<span class="stat-plus"></span></span>
-        <span class="stat-label" data-i18n="stat_years">Years of Flight</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item">
-        <span class="stat-number">13<span class="stat-plus"></span></span>
+        <span class="stat-number">13</span>
         <span class="stat-label" data-i18n="stat_members">Team Members</span>
       </div>
       <div class="stat-divider" aria-hidden="true"></div>
       <div class="stat-item">
-        <span class="stat-number">2<span class="stat-plus"></span></span>
-        <span class="stat-label" data-i18n="stat_aircrafts">Aircrafts</span>
+        <span class="stat-number">2</span>
+        <span class="stat-label" data-i18n="stat_aircrafts">Aircraft Built</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-number">7<span class="stat-unit">th</span></span>
+        <span class="stat-label" data-i18n="stat_ranking">of 110 Teams · KTR</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-item">
+        <span class="stat-number">100<span class="stat-unit">%</span></span>
+        <span class="stat-label" data-i18n="stat_student">Student Engineered</span>
       </div>
     </div>
   </section>
@@ -72,7 +109,7 @@
           <a href="/team/" class="btn btn-ghost" data-i18n="about_cta">Learn More About Us</a>
         </div>
         <div class="about-visual">
-          <img src="/assets/images/teamPhoto.jpeg" alt="BFL'Y Team Photo" class="about-img">
+          <img src="/assets/images/team/teamPhoto.jpg" alt="BFL'Y Team Photo" class="about-img">
         </div>
       </div>
     </div>
@@ -90,7 +127,7 @@
           <h3 data-i18n="vcard2_title">TurcoFighter</h3>
           <p data-i18n="vcard2_body">Our second aircraft project.</p>
           <div class="about-visual">
-            <img src="/assets/images/turcoFighter.jpg" alt="TurcoFighter Photo" class="about-img">
+            <img src="/assets/images/vehicles/turcoFighter.jpg" alt="TurcoFighter Photo" class="about-img">
           </div>
         </div>
         <div class="v-card">
@@ -98,7 +135,7 @@
           <h3 data-i18n="vcard3_title">X</h3>
           <p data-i18n="vcard3_body">Our latest aircraft project.</p>
           <div class="about-visual">
-            <img src="/assets/images/Delifisek.jpg" alt="X Photo" class="about-img">
+            <img src="/assets/images/vehicles/Delifisek.jpg" alt="X Photo" class="about-img">
           </div>
         </div>
       </div>
@@ -109,6 +146,7 @@
     </div>
   </section>
 
+  <script src="/js/blog-data.js"></script>
   <script src="/js/components.js"></script>
   <script src="/js/main.js"></script>
 
