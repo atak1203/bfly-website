@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       df_ov_label:  'General Info',
       df_ov_school: 'Baykar Science High School SUAS',
-      df_ov_p1: "BFL'Y is a 13-person SUAS team made up of Baykar Science High School students, working alongside our advisor. While the competitions we enter are mostly filled with university teams, we design and build our own carbon fiber autonomous aircraft from scratch as a high school team. DeliFişek is the second product of this approach.",
+      df_ov_p1: "BFL'Y is a 14-person SUAS team made up of Baykar Science High School students, working alongside our advisors. While the competitions we enter are mostly filled with university teams, we design and build our own carbon fiber autonomous aircraft from scratch as a high school team. DeliFişek is the second product of this approach.",
       df_ov_p2: "With its all-carbon-fiber airframe, V-tail configuration and 2.2 m wingspan, DeliFişek is a fully autonomous platform with strong maneuverability. It's being developed for both the TEKNOFEST Combat UAV competition and the SUAS competition at the same time — meaning a single aircraft can meet the mission requirements of two different competitions. Every stage, from design to software, was carried out entirely by high school students.",
 
       df_zoom_eyebrow: 'Detailed Inspection',
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       df_ov_label:  'Genel Bilgi',
       df_ov_school: 'Baykar Fen Lisesi SUAS',
-      df_ov_p1: "BFL'Y, danışmanımızla birlikte toplam 13 kişilik, Baykar Fen Lisesi öğrencilerinden oluşan bir SUAS takımı. Katıldığımız yarışmalara çoğunlukla üniversite takımları katılırken, biz bir lise takımı olarak kendi karbon fiber otonom aracımızı baştan sona tasarlayıp üretiyoruz. DeliFişek, bu yaklaşımın ikinci ürünü.",
+      df_ov_p1: "BFL'Y, danışmanlarımızla birlikte toplam 14 kişilik, Baykar Fen Lisesi öğrencilerinden oluşan bir SUAS takımı. Katıldığımız yarışmalara çoğunlukla üniversite takımları katılırken, biz bir lise takımı olarak kendi karbon fiber otonom aracımızı baştan sona tasarlayıp üretiyoruz. DeliFişek, bu yaklaşımın ikinci ürünü.",
       df_ov_p2: "DeliFişek; tam karbon fiber gövdesi, V kuyruk yapısı ve 2.2 metrelik kanat açıklığıyla iyi bir manevra kabiliyetine sahip, tamamen otonom hareket eden bir platform. Araç aynı anda hem TEKNOFEST Savaşan İHA yarışması hem de SUAS yarışması için geliştiriliyor; yani tek bir araç, iki farklı yarışmanın tüm görev gereksinimlerini karşılayabiliyor. Tasarımdan yazılıma kadar her aşama, tamamen lise öğrencileri tarafından hayata geçirildi.",
 
       df_zoom_eyebrow: 'Detaylı İnceleme',

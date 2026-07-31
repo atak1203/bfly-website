@@ -830,18 +830,83 @@ ul { list-style: none; }
     gap: 48px;
   }
 
-  .vehicle-cards { grid-template-columns: 1fr; }
+  .vehicle-cards { grid-template-columns: 1fr; gap: 16px; margin: 36px 0; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
   .stat-item { padding: 16px 24px; }
   .stat-divider { display: none; }
+  .section-pad { padding: 72px 0; }
 }
 
-@media (max-width: 480px) {
+/* ---------- MOBILE (PHONE) ---------- */
+@media (max-width: 600px) {
+  :root {
+    /* Daha kompakt, telefon ekranına uygun tipografi ölçeği */
+    --fs-display-xl: clamp(2.2rem, 9vw, 3rem);
+    --fs-display-lg: clamp(1.9rem, 8vw, 2.6rem);
+    --fs-h1:         clamp(1.35rem, 6vw, 1.7rem);
+    --fs-h2:         clamp(1.1rem, 5vw, 1.35rem);
+    --fs-body:        0.92rem;
+    --fs-body-sm:     0.85rem;
+    --space-2xl: 56px;
+    --space-xl:  40px;
+  }
+
+  body { font-size: 15px; }
+
+  .container,
+  .nav-container,
+  .footer-container,
+  .footer-bottom { padding-left: 20px; padding-right: 20px; }
+
+  /* Hero: artık ekranı zorla doldurmuyor, içeriğe göre nefes alıyor */
+  .hero {
+    min-height: auto;
+    padding: calc(var(--nav-height) + 56px) 0 72px;
+  }
+
+  .hero-content { padding: 0 20px; }
+  .hero-badge { margin-bottom: 18px; padding: 7px 14px; }
+  .hero-eyebrow { margin-bottom: 14px; }
+  .hero-title { margin-bottom: 20px; gap: 6px; }
+  .hero-title-sub { font-size: clamp(0.95rem, 4vw, 1.1rem); }
+  .hero-desc { font-size: 0.9rem; margin-bottom: 28px; line-height: 1.65; }
+  .runway-line { margin-bottom: 22px; }
+  .scroll-indicator { display: none; }
+
+  .hero-cta { gap: 12px; }
   .hero-cta { flex-direction: column; }
-  .btn { width: 100%; justify-content: center; }
-  .footer-container { flex-direction: column; }
+  .btn { width: 100%; justify-content: center; height: var(--btn-height-sm); }
+
+  /* Section bölümleri: sabit büyük boşluklar yerine kompakt aralık */
+  .section-pad { padding: 48px 0; }
+  .section-eyebrow { margin-bottom: 10px; }
+  .section-title { margin-bottom: 16px; }
+  .body-text { margin-bottom: 24px; }
+
+  /* Stats: tek satıra sığmayan büyük sayılar yerine kompakt grid */
+  .stats-strip { padding: 32px 20px; }
+  .stats-container { gap: 20px 12px; justify-content: space-between; }
+  .stat-item { padding: 0; flex: 1 1 40%; gap: 4px; }
+  .stat-number { font-size: clamp(1.6rem, 8vw, 2.1rem); }
+  .stat-label { font-size: 0.6rem; }
+  .stat-divider { display: none; }
+
+  .about-grid { gap: 28px; }
+  .about-placeholder { font-size: 0.78rem; }
+
+  .v-card { padding: 22px; }
+  .v-card-icon { margin-bottom: 14px; }
+  .v-card h3 { font-size: 0.8rem; margin-bottom: 8px; }
+  .v-card p { font-size: 0.85rem; }
+
+  .footer { padding: 36px 0 20px; }
+  .footer-container { flex-direction: column; gap: 24px; margin-bottom: 24px; }
   .footer-right { text-align: left; }
+
+  /* Sayfa hero'ları (page-hero) da mobilde daha kompakt */
+  .page-hero { min-height: auto; padding: calc(var(--nav-height) + 40px) 0 40px; }
+  .page-hero-desc { font-size: 0.9rem; max-width: 100%; }
 }
 
 /* ---------- PAGE HERO (ortak tüm sayfalar) ---------- */

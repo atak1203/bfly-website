@@ -154,3 +154,9 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 600px) {
+  .vehicles-section { padding-top: 32px; }
+  .veh-card-body { padding: 20px; }
+  .veh-desc { margin-bottom: 18px; }
+}

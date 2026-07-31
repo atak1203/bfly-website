@@ -309,3 +309,39 @@
   .mission-cta { flex-direction: column; }
   .numbers-inner { grid-template-columns: 1fr 1fr; }
 }
+
+@media (max-width: 600px) {
+  /* Hero artık zorla tam ekran değil, içeriğe göre boyutlanıyor */
+  .df-hero { min-height: auto; padding-bottom: 48px; align-items: flex-start; }
+  .df-hero-content { padding: 32px 20px 40px; }
+  .hero-drone-wrap { position: relative; width: 100%; right: 0; top: 0; height: 260px; opacity: 0.55; margin-top: 8px; }
+  .hero-classification { margin-bottom: 20px; }
+
+  .general-overview { padding: 56px 0; }
+  .overview-title { margin-bottom: 28px; }
+  .overview-text p { font-size: 0.88rem; text-align: left; }
+
+  /* Kaydırma ile yakınlaşan 3D bölüm: yüksekliği daha az abartılı */
+  .scroll-3d-section { height: 220vh; }
+  .scroll-3d-inner { padding: 0 20px; gap: 32px; }
+  .scroll-3d-info { flex: none; }
+  .scroll-3d-desc { margin-bottom: 20px; }
+
+  .timeline-section { padding: 56px 0; }
+  .timeline-header { margin-bottom: 40px; }
+  .tl-item { margin-bottom: 36px; }
+
+  .specs-section { padding: 56px 0; }
+  .specs-header { margin-bottom: 40px; }
+  .specs-grid { gap: 28px; }
+
+  .gallery-section { padding: 56px 0; }
+  .gallery-header { margin-bottom: 32px; }
+  .gallery-tabs { margin-bottom: 28px; flex-wrap: wrap; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px; gap: 8px; }
+  .gallery-item:nth-child(1) { grid-column: span 2; }
+
+  .mission-section { padding: 56px 0; }
+  .mission-badge { margin-bottom: 24px; }
+  .mission-desc { margin-bottom: 28px; font-size: 0.88rem; }
+}

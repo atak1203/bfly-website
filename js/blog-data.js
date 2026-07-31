@@ -14,16 +14,16 @@ window.BFLY_NEWS = [
     date_en: 'October 16, 2025',     date_tr: '16 Ekim 2025',
     category_en: 'Announcement',  category_tr: 'Duyuru',
     featured: true,
-    title_en: 'Our 13-Person BFL\'Y Team Has Been Formed!',
-    title_tr: '13 Kişilik BFL\'Y Takımımız Kuruldu!',
-    excerpt_en: 'Our team BFL\'Y was founded by 13 members who share big ideals. In its very first meeting, the team defined its vision and slogan. Our vision: to always aim higher and to develop innovative technologies. Our slogan: "From the Roots to the Skies..."',
-    excerpt_tr: 'BFL\'Y takımımız, büyük idealler doğrultusunda 13 kişi olarak kuruldu. İlk toplantısında vizyonunu ve sloganını belirledi. Vizyonumuz: Her zaman daha iyisini hedefleyen ve yenilikçi teknolojiler üreten bir takım olmak. Sloganımız ise: "Köklerden Göklere..."',
-    content_en: `Our team BFL'Y was founded by 13 members who share big ideals. In its very first meeting, the team defined its vision and slogan, along with the sub-systems that would carry the project forward: mechanical design, electronics and avionics, software, PR, and budget.
+    title_en: 'Our 14-Person BFL\'Y Team Has Been Formed!',
+    title_tr: '14 Kişilik BFL\'Y Takımımız Kuruldu!',
+    excerpt_en: 'Our team BFL\'Y was founded by 14 members who share big ideals. In its very first meeting, the team defined its vision and slogan. Our vision: to always aim higher and to develop innovative technologies. Our slogan: "From the Roots to the Skies..."',
+    excerpt_tr: 'BFL\'Y takımımız, büyük idealler doğrultusunda 14 kişi olarak kuruldu. İlk toplantısında vizyonunu ve sloganını belirledi. Vizyonumuz: Her zaman daha iyisini hedefleyen ve yenilikçi teknolojiler üreten bir takım olmak. Sloganımız ise: "Köklerden Göklere..."',
+    content_en: `Our team BFL'Y was founded by 14 members who share big ideals. In its very first meeting, the team defined its vision and slogan, along with the sub-systems that would carry the project forward: mechanical design, electronics and avionics, software, PR, and budget.
 
 Our vision: to always aim higher and to develop innovative technologies that represent Baykar Science High School on national and international stages. Our slogan, "From the Roots to the Skies...", captures exactly that journey — starting from a classroom and a shared idea, and working our way toward fully autonomous flight.
 
 In the weeks following the founding meeting, the team split into working groups, assigned early tasks, and began researching the SUAS and TEKNOFEST Combat UAV competitions we would go on to target. It was the first step of a journey that would eventually include a carbon-fiber airframe, a fully autonomous mission stack, and a trip across the Atlantic.`,
-    content_tr: `BFL'Y takımımız, büyük idealler doğrultusunda 13 kişi olarak kuruldu. İlk toplantısında vizyonunu, sloganını ve projeyi ileriye taşıyacak alt sistemlerini belirledi: mekanik tasarım, elektronik/aviyonik, yazılım, PR ve bütçe.
+    content_tr: `BFL'Y takımımız, büyük idealler doğrultusunda 14 kişi olarak kuruldu. İlk toplantısında vizyonunu, sloganını ve projeyi ileriye taşıyacak alt sistemlerini belirledi: mekanik tasarım, elektronik/aviyonik, yazılım, PR ve bütçe.
 
 Vizyonumuz: Baykar Fen Lisesi'ni ulusal ve uluslararası platformlarda temsil eden, her zaman daha iyisini hedefleyen ve yenilikçi teknolojiler üreten bir takım olmak. "Köklerden Göklere..." sloganımız da tam olarak bu yolculuğu anlatıyor — bir sınıfta, ortak bir fikirle başlayıp tam otonom uçuşa doğru ilerleyen bir yolculuk.
 

@@ -246,3 +246,10 @@
 @media (max-width: 480px) {
   .contact-form-wrap { padding: 24px; }
 }
+
+@media (max-width: 600px) {
+  .contact-section { padding: calc(var(--nav-height) + 32px) 0 56px; }
+  .contact-heading { margin-bottom: 32px; }
+  .contact-heading p { max-width: 100%; }
+  .info-block { margin-bottom: 26px; }
+}

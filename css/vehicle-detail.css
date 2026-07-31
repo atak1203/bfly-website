@@ -255,3 +255,16 @@
   .vd-specs { position: static; }
   .vd-image-placeholder { height: 260px; }
 }
+
+@media (max-width: 600px) {
+  .vd-hero { padding: calc(var(--nav-height) + 32px) 0 40px; }
+  .vd-title { font-size: clamp(2rem, 11vw, 2.8rem); margin-bottom: 14px; }
+  .vd-subtitle { font-size: 0.9rem; }
+  .vd-back { margin-bottom: 22px; }
+  .vd-image-placeholder { height: 200px; }
+  .vd-content { padding: 48px 0; }
+  .vd-grid { gap: 32px; }
+  .vd-body p { font-size: 0.88rem; }
+  .vd-specs { padding: 20px; }
+  .vd-nav { padding: 28px 0; }
+}

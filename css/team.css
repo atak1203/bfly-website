@@ -204,9 +204,15 @@
   .timeline-event::before { left: 12px; }
 }
 @media (max-width: 600px) {
+  .team-intro { padding: 48px 0 40px; }
   .team-intro-stats { grid-template-columns: 1fr 1fr; }
+  .intro-stat { padding: 18px 16px; }
+  .intro-stat-num { font-size: 1.4rem; }
+  .intro-stat-label { font-size: 0.68rem; }
+  .team-intro-text h2 { margin-bottom: 14px; }
+  .team-intro-text p { font-size: 0.88rem; margin-bottom: 12px; }
   .members-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .team-photo-wrap { aspect-ratio: 3/4; margin-bottom: 40px; }
+  .team-photo-wrap { aspect-ratio: 3/4; margin-bottom: 32px; }
   .team-photo-label {
     left: 12px; right: 12px; bottom: 12px;
     font-size: 0.58rem;
@@ -215,4 +221,14 @@
     line-height: 1.4;
     white-space: normal;
   }
+
+  .timeline-section { padding: 48px 0; }
+  .timeline-header { margin-bottom: 40px; }
+  .timeline-card { padding: 16px 18px; }
+
+  .members-section { padding: 48px 0; }
+  .members-header { margin-bottom: 28px; }
+  .member-info { padding: 12px 14px 14px; }
+  .member-name { font-size: 0.72rem; }
+  .member-role, .member-dept { font-size: 0.66rem; }
 }

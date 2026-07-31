@@ -266,7 +266,13 @@
 }
 
 @media (max-width: 500px) {
-  .gallery-grid { columns: 1; }
+  .gallery-grid { columns: 2; column-gap: 8px; }
+  .gallery-item { margin-bottom: 8px; }
   .lightbox-prev { left: 8px; padding: 14px 14px; }
   .lightbox-next { right: 8px; padding: 14px 14px; }
+}
+
+@media (max-width: 600px) {
+  .gallery-section { padding: 40px 0 56px; }
+  .gallery-filters { margin-bottom: 24px; }
 }

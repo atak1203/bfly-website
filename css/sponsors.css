@@ -212,3 +212,12 @@
 @media (max-width: 480px) {
   .sponsor-cta-block { padding: 28px; }
 }
+
+@media (max-width: 600px) {
+  .sponsors-section { padding: 40px 0 56px; }
+  .sponsor-card, .sponsor-card-featured { padding: 22px; gap: 16px; }
+  .sponsor-grid { gap: 14px; margin-bottom: 40px; }
+  .sponsor-name { font-size: 0.9rem; }
+  .sponsor-card-featured .sponsor-name { font-size: 1.1rem; }
+  .sponsor-desc { font-size: 0.78rem; }
+}
